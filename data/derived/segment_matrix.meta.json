@@ -1,0 +1,21 @@
+{
+  "fingerprint": "5d9e1a1510e46b2a",
+  "built_at": "2026-09-04T10:05:49",
+  "rows": 1012,
+  "districts": 68,
+  "segments": [
+    "MARG_RAINFED",
+    "MARG_IRRIG",
+    "SMALL_RAINFED",
+    "SMALL_IRRIG",
+    "MEDIUM",
+    "LARGE",
+    "WOMEN_MARG",
+    "YOUTH_SMALL",
+    "TENANT",
+    "FPO_SMALL",
+    "LIVESTOCK_MARG"
+  ],
+  "basis": "MODELLED \u2014 real KB engines run over synthetic segment archetypes; no observed demand/adoption data",
+  "errors": 0
+}

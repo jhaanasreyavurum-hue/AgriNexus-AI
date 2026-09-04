@@ -1,0 +1,12 @@
+# AgriNexus AI — runtime dependencies for Streamlit Community Cloud.
+# Verified 2026-09-04 by clean-venv install + 134 tests + live run on Python 3.12 and 3.13.
+# Only what app.py / core / ui import. Heavy geo / ML libraries (folium, geopandas,
+# scikit-learn) are intentionally absent — nothing in the app imports them.
+streamlit>=1.36,<2          # verified 1.63.0 (st.navigation, st.Page, width="stretch")
+pandas>=2.2,<3              # verified 2.3.3
+numpy>=1.26,<3              # verified 2.5.2
+plotly>=5.22,<8             # verified 7.0.0
+pydeck>=0.9,<1              # verified 0.9.3 (Carto basemap, no Mapbox key needed)
+pyyaml>=6.0,<7              # KB overrides, vocab, users, demo farms, crop stages
+requests>=2.32,<3           # Open-Meteo (keyless) / optional OpenWeatherMap / optional LLM narrator
+fpdf2>=2.7,<3               # PDF reports (core Helvetica fonts only, no font files)

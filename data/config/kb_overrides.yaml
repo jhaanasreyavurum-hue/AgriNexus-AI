@@ -1,0 +1,292 @@
+# =============================================================================
+# AgriNexus AI — Knowledge Base Overrides & Interpretation Rules
+# =============================================================================
+# POLICY
+#   * The original CSVs in data/knowledge_base/ are the SOURCE OF TRUTH and are
+#     never edited. Their SHA-256 checksums are pinned in CHECKSUMS.sha256.
+#   * Every correction is listed here explicitly, with a reason and a public
+#     reference, and can be disabled individually (enabled: false).
+#   * The loader records every applied override in KnowledgeBase.override_log so
+#     the UI can display "value corrected from KB" badges.
+#   * Nothing in this file adds new schemes, loans, products or rates. It only
+#     corrects attributes of records that already exist in the KB, excludes
+#     records, or tells the engines HOW to interpret KB columns.
+# =============================================================================
+version: 1
+
+# -----------------------------------------------------------------------------
+# INTERPRETATION RULES — how engines should read ambiguous KB columns
+# -----------------------------------------------------------------------------
+interpretation:
+  # The KB does not state a unit for land columns. ai_recommendation_rules uses
+  # explicit "Acres" bands, so all land columns are interpreted as ACRES.
+  # Flip to "hectares" if the KB author confirms otherwise.
+  land_unit: acres
+
+  # EXCEPTION — agrinexus_eligibility_rules.land_min/land_max. Their per-category
+  # bands (Marginal 0.03–1.98, Small 1.05–3.00, Medium 2.01–5.95, Large 5.03–10.97)
+  # line up with the official Agriculture-Census farmer classes in HECTARES
+  # (marginal <1 ha, small 1–2 ha, medium 2–10 ha, large >10 ha), not acres.
+  # Interpreted as hectares so that a 3.5-acre (1.4 ha) small farmer actually
+  # fires "Small Farmer" rules. Flip to "acres" if the KB author confirms otherwise.
+  eligibility_rules_land_unit: hectares
+
+  # KB scheme rows carry a single narrow `eligible_crop` / `eligible_farmer`
+  # value (e.g. PM-KISAN: eligible_crop = "Soybean"). Treating these as HARD
+  # filters would wrongly exclude most farmers. "soft" = contributes to the
+  # match score and appears in the WHY explanation; "hard" = excludes.
+  scheme_eligible_crop_mode: soft
+  scheme_eligible_farmer_mode: soft
+  scheme_land_range_mode: scored      # scored | hard
+  scheme_income_limit_mode: hard      # income above limit -> not eligible
+  scheme_age_range_mode: hard
+
+  # The KB marks soil_card_required / insurance_required = Yes on ~75 % of
+  # schemes (incl. income-support and pension schemes). Real programmes do not
+  # gate on these, so they are SOFT (informational) prerequisites; Aadhaar and
+  # bank account remain hard DBT prerequisites.
+  scheme_soft_prerequisites:
+    - soil_card_required
+    - insurance_required
+
+  # Values in crop columns that mean "applies to every crop"
+  universal_crop_terms:
+    - All Crops
+    - Not Crop Specific
+
+  # Values in state / district columns that mean "applies everywhere"
+  universal_region_terms:
+    - All India
+    - All Districts
+    - State-wide (All Notified Districts)
+
+  # Eligibility-rule state "All India" applies to any state; a state-specific
+  # rule applies only to that state.
+  eligibility_rule_state_mode: exact_or_universal
+
+  # crop_master rainfall columns are annual mm ranges for the crop.
+  crop_rainfall_unit: mm_per_year
+
+  # Coverage notice — the KB is deep for Telangana and shallow elsewhere.
+  # Engines must surface this instead of silently returning few results.
+  deep_coverage_states:
+    - Telangana
+  moderate_coverage_states:
+    - Andhra Pradesh
+    - Maharashtra
+    - Karnataka
+
+# -----------------------------------------------------------------------------
+# RECORD OVERRIDES — factual corrections to existing KB rows
+# -----------------------------------------------------------------------------
+overrides:
+
+  # ---- Government schemes -------------------------------------------------
+  - id: OVR-SCHM-001
+    table: agrinexus_government_schemes
+    key: {scheme_id: SCHM001}          # PM-KISAN
+    set:
+      scheme_type: Direct Benefit Transfer
+      ministry: Ministry of Agriculture & Farmers Welfare
+      department: Department of Agriculture & Farmers Welfare
+      eligible_crop: All Crops
+      eligible_farmer: Landholding Farmer Families
+      beneficiary_type: Landholding Farmer
+      maximum_land: null
+      income_limit: null
+      aadhaar_required: "Yes"
+      soil_card_required: "No"
+      insurance_required: "No"
+      maximum_age: null
+    reason: >
+      KB typed PM-KISAN as a mechanization subsidy under Rural Development and
+      restricted it to Soybean / women-headed households with a 2.5-acre cap,
+      an income limit and a crop-insurance prerequisite. PM-KISAN is a
+      crop-agnostic income-support DBT (Rs 6,000/yr) for all landholding farmer
+      families (land ceiling removed June 2019); Aadhaar is mandatory; no soil
+      card or insurance prerequisite; exclusions are institutional landholders,
+      income-tax payers and certain professionals — not modelled in the KB.
+    reference: https://pmkisan.gov.in
+    enabled: true
+
+  - id: OVR-SCHM-002
+    table: agrinexus_government_schemes
+    key: {scheme_id: SCHM002}          # PMFBY
+    set:
+      scheme_type: Crop Insurance
+      ministry: Ministry of Agriculture & Farmers Welfare
+      department: Department of Agriculture & Farmers Welfare
+      eligible_crop: All Crops
+    reason: >
+      KB typed PMFBY as "Market Support" under Ministry of Finance and limited
+      it to Pulses. PMFBY is the national yield-index crop insurance scheme
+      covering notified food, oilseed and commercial/horticultural crops.
+    reference: https://pmfby.gov.in
+    enabled: true
+
+  - id: OVR-SCHM-003
+    table: agrinexus_government_schemes
+    key: {scheme_id: SCHM003}          # KCC
+    set:
+      scheme_type: Credit Support
+      ministry: Ministry of Agriculture & Farmers Welfare
+      eligible_crop: All Crops
+    reason: >
+      KB typed KCC as "Fisheries Support" under Consumer Affairs and limited it
+      to Cotton. KCC is a crop-agnostic short-term credit product.
+    reference: https://www.nabard.org
+    enabled: true
+
+  - id: OVR-SCHM-013
+    table: agrinexus_government_schemes
+    key: {scheme_id: SCHM013}          # PM-KMY
+    set:
+      scheme_type: Pension / Social Security
+      ministry: Ministry of Agriculture & Farmers Welfare
+      eligible_crop: All Crops
+    reason: >
+      KB typed PM Kisan Maandhan Yojana as "Irrigation Support" under Fisheries.
+      It is a voluntary contributory pension scheme for small & marginal farmers.
+    reference: https://maandhan.in
+    enabled: true
+
+  # ---- Crop master: season / water-requirement corrections ----------------
+  # Only clear-cut agronomic errors are corrected. Where a crop is genuinely
+  # grown in more than one season, the primary season is set and the
+  # alternates are listed in `season_alternates` (new column).
+  - id: OVR-CROP-001
+    table: agrinexus_crop_master
+    key: {crop_id: CROP001}            # Paddy (Rice)
+    set: {season: Kharif, season_alternates: "Rabi"}
+    reason: Paddy is primarily a Kharif crop in India; Rabi paddy exists in irrigated tracts.
+    reference: ICAR crop calendars
+    enabled: true
+
+  - id: OVR-CROP-003
+    table: agrinexus_crop_master
+    key: {crop_id: CROP003}            # Maize
+    set: {season: Kharif, season_alternates: "Rabi; Zaid (Summer)", water_requirement: Medium}
+    reason: Maize is primarily Kharif, also grown in Rabi/Spring; medium water requirement.
+    reference: ICAR crop calendars
+    enabled: true
+
+  - id: OVR-CROP-004
+    table: agrinexus_crop_master
+    key: {crop_id: CROP004}            # Barley
+    set: {season: Rabi, water_requirement: Low}
+    reason: Barley is a winter (Rabi) cereal with low water needs.
+    reference: ICAR crop calendars
+    enabled: true
+
+  - id: OVR-CROP-006
+    table: agrinexus_crop_master
+    key: {crop_id: CROP006}            # Pearl Millet (Bajra)
+    set: {season: Kharif, water_requirement: Low, minimum_rainfall: 400, maximum_rainfall: 900}
+    reason: >
+      Bajra is a drought-tolerant Kharif millet grown in 400-900 mm zones.
+      KB listed it as Rabi / High water / 1250-1850 mm, which contradicts
+      the crop's core agronomy and would break the crop advisor.
+    reference: ICAR-AICRP Pearl Millet
+    enabled: true
+
+  - id: OVR-CROP-007
+    table: agrinexus_crop_master
+    key: {crop_id: CROP007}            # Finger Millet (Ragi)
+    set: {season: Kharif, season_alternates: "Rabi"}
+    reason: Ragi is predominantly Kharif.
+    reference: ICAR crop calendars
+    enabled: true
+
+  - id: OVR-CROP-018
+    table: agrinexus_crop_master
+    key: {crop_id: CROP018}            # Black Gram (Urad)
+    set: {season: Kharif, season_alternates: "Rabi; Zaid (Summer)"}
+    reason: Urad is primarily Kharif.
+    reference: ICAR crop calendars
+    enabled: true
+
+  - id: OVR-CROP-019
+    table: agrinexus_crop_master
+    key: {crop_id: CROP019}            # Lentil (Masoor)
+    set: {season: Rabi}
+    reason: Lentil is a winter pulse.
+    reference: ICAR crop calendars
+    enabled: true
+
+  - id: OVR-CROP-028
+    table: agrinexus_crop_master
+    key: {crop_id: CROP028}            # Mustard
+    set: {season: Rabi}
+    reason: Mustard / rapeseed is a Rabi oilseed.
+    reference: ICAR-DRMR
+    enabled: true
+
+  - id: OVR-CROP-030
+    table: agrinexus_crop_master
+    key: {crop_id: CROP030}            # Sesame (Til)
+    set: {season: Kharif, season_alternates: "Zaid (Summer)"}
+    reason: Sesame is primarily Kharif.
+    reference: ICAR crop calendars
+    enabled: true
+
+  - id: OVR-CROP-036
+    table: agrinexus_crop_master
+    key: {crop_id: CROP036}            # Cotton
+    set: {season: Kharif, soil_type: "Black Soil (Regur)", water_requirement: Medium, minimum_rainfall: 600, maximum_rainfall: 1200}
+    reason: >
+      Cotton is an annual Kharif crop (sown Jun-Jul, harvested Oct-Jan),
+      not a year-round perennial; typical rainfall zone 600-1200 mm. Its
+      classic soil is black cotton soil (regur) — KB listed loamy soil.
+    reference: ICAR-CICR
+    enabled: true
+
+  - id: OVR-CROP-045
+    table: agrinexus_crop_master
+    key: {crop_id: CROP045}            # Potato
+    set: {season: Rabi}
+    reason: Potato is a Rabi crop in the plains.
+    reference: ICAR-CPRI
+    enabled: true
+
+  - id: OVR-CROP-061
+    table: agrinexus_crop_master
+    key: {crop_id: CROP061}            # Green Peas
+    set: {season: Rabi, water_requirement: Medium}
+    reason: Green pea is a winter vegetable.
+    reference: ICAR crop calendars
+    enabled: true
+
+  - id: OVR-CROP-087
+    table: agrinexus_crop_master
+    key: {crop_id: CROP087}            # Turmeric
+    set: {water_requirement: High, minimum_rainfall: 1000, maximum_rainfall: 2000}
+    reason: Turmeric needs ~1000-2000 mm or assured irrigation.
+    reference: ICAR-IISR
+    enabled: true
+
+  # Watermelon / Muskmelon are seasonal (Zaid) cucurbits, not perennials
+  - id: OVR-CROP-076
+    table: agrinexus_crop_master
+    key: {crop_id: CROP076}
+    set: {season: Zaid (Summer)}
+    reason: Watermelon is an annual summer (Zaid) crop.
+    reference: ICAR-IIHR
+    enabled: true
+
+  - id: OVR-CROP-077
+    table: agrinexus_crop_master
+    key: {crop_id: CROP077}
+    set: {season: Zaid (Summer)}
+    reason: Muskmelon is an annual summer (Zaid) crop.
+    reference: ICAR-IIHR
+    enabled: true
+
+# -----------------------------------------------------------------------------
+# EXCLUSIONS — KB rows hidden from recommendation engines (never deleted)
+# -----------------------------------------------------------------------------
+exclusions: []
+#  - id: EXC-001
+#    table: agrinexus_government_schemes
+#    key: {scheme_id: SCHM0xx}
+#    reason: ...
+#    enabled: true

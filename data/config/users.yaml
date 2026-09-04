@@ -1,0 +1,42 @@
+# AgriNexus AI — demo user directory (DEMO ACCOUNTS).
+# Passwords are stored as salted SHA-256 hashes. This is a demo directory for a
+# Streamlit deployment without a database; it is NOT a production identity system.
+# All demo accounts use the password: agrinexus
+salt: "agrinexus-demo-salt-v1"
+users:
+  - username: ramulu
+    display_name: Ramulu (demo farmer)
+    role: farmer
+    organisation: Warangal Rural, Telangana
+    farm_id: TS_WARANGAL_COTTON_DEMO
+    password_sha256: "d3438bf557441c66c9ba42d05de9d6086a2eaf80165aedd93bb6a537ee712948"
+  - username: sunita
+    display_name: Sunita (demo farmer)
+    role: farmer
+    organisation: Nashik, Maharashtra
+    farm_id: MH_NASHIK_SOYBEAN_DEMO
+    password_sha256: "d3438bf557441c66c9ba42d05de9d6086a2eaf80165aedd93bb6a537ee712948"
+  - username: newfarmer
+    display_name: New farmer (no farm yet)
+    role: farmer
+    organisation: ""
+    farm_id: null
+    password_sha256: "d3438bf557441c66c9ba42d05de9d6086a2eaf80165aedd93bb6a537ee712948"
+  - username: bank.manager
+    display_name: Priya Menon (Agri Credit Manager)
+    role: bank_manager
+    organisation: State Bank of India · Telangana circle
+    bank_name: State Bank of India
+    home_state: Telangana
+    password_sha256: "d3438bf557441c66c9ba42d05de9d6086a2eaf80165aedd93bb6a537ee712948"
+  - username: officer
+    display_name: K. Srinivas (District Agriculture Officer)
+    role: government_officer
+    organisation: Department of Agriculture, Government of Telangana
+    home_state: Telangana
+    password_sha256: "d3438bf557441c66c9ba42d05de9d6086a2eaf80165aedd93bb6a537ee712948"
+  - username: admin
+    display_name: Platform administrator
+    role: administrator
+    organisation: AgriNexus AI
+    password_sha256: "d3438bf557441c66c9ba42d05de9d6086a2eaf80165aedd93bb6a537ee712948"

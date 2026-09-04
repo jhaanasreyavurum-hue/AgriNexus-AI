@@ -1,0 +1,151 @@
+document_id,document_name,scheme_name,loan_name,mandatory,accepted_format,verification_required,issuing_authority
+DOC001,Water Source Certificate (Borewell/Canal),Rashtriya Krishi Vikas Yojana (RKVY),Warehouse Receipt / Post-Harvest Loan,Yes,"JPEG / PNG (Scanned Copy, max 1MB)",No,"Irrigation Department, Telangana"
+DOC002,Land Ownership / Pattadar Passbook,Micro Irrigation Fund (MIF),Farmer Producer Organisation (FPO) Term Loan,Yes,PDF (Digitally Signed / e-Sign),No,"Revenue Department, Telangana"
+DOC003,Ration Card,Sub-Mission on Agricultural Mechanization (SMAM),Solar Pump / Renewable Energy Agri Loan,Yes,PDF (Digitally Signed / e-Sign),Yes,Civil Supplies Department
+DOC004,Voter ID Card,Pradhan Mantri Kisan Samman Nidhi (PM-KISAN),Farmer Producer Organisation (FPO) Term Loan,Yes,"JPEG / PNG (Scanned Copy, max 1MB)",Yes,Election Commission of India
+DOC005,Project Report / Detailed Project Report (DPR),"Formation and Promotion of 10,000 FPOs Scheme",Farm Mechanization / Tractor Loan,Yes,"PDF (Scanned Copy, max 2MB)",Yes,Chartered Accountant / Consultant
+DOC006,Village / Revenue Officer Certificate,Rashtriya Krishi Vikas Yojana (RKVY),Solar Pump / Renewable Energy Agri Loan,Yes,"JPEG / PNG (Scanned Copy, max 1MB)",Yes,Village Revenue Officer (VRO)
+DOC007,Bank Passbook / Cancelled Cheque,Paramparagat Krishi Vikas Yojana (PKVY),Agri Infrastructure & Cold Storage Loan,Yes,PDF (Digitally Signed / e-Sign),No,Issuing Bank Branch
+DOC008,No Dues Certificate from Other Banks,,Solar Pump / Renewable Energy Agri Loan,Yes,Physical Original for Verification Only,Yes,Issuing Bank Branch
+DOC009,Previous Subsidy Non-Availment Declaration,National Mission on Natural Farming (NMNF),Crop Loan (Seasonal Agricultural Operations),Yes,Original + Photocopy (Physical Submission),No,Self-Declaration / Agriculture Department
+DOC010,Bank Guarantee / Surety Bond,Telangana Farm Mechanization Scheme,Crop Loan (Seasonal Agricultural Operations),Yes,Physical Original for Verification Only,No,Issuing Bank Branch
+DOC011,Livestock Health & Vaccination Certificate,Soil Health Card Scheme,Warehouse Receipt / Post-Harvest Loan,No,"PDF (Scanned Copy, max 2MB)",No,"Veterinary Department, Telangana"
+DOC012,Village / Revenue Officer Certificate,"Formation and Promotion of 10,000 FPOs Scheme",,Yes,PDF (Digitally Signed / e-Sign),Yes,Village Revenue Officer (VRO)
+DOC013,Ration Card,Telangana Micro Irrigation Project Subsidy,Farmer Producer Organisation (FPO) Term Loan,Yes,"JPEG / PNG (Scanned Copy, max 1MB)",No,Civil Supplies Department
+DOC014,FPO Registration Certificate,Pradhan Mantri Kisan Samman Nidhi (PM-KISAN),Kisan Credit Card (KCC),Yes,Physical Original for Verification Only,Yes,Registrar of Companies / Cooperative Societies
+DOC015,Crop Sowing Certificate,National Livestock Mission,Crop Loan (Seasonal Agricultural Operations),Yes,PDF (Digitally Signed / e-Sign),No,Village Agriculture Extension Officer (VAEO)
+DOC016,Mobile Number Linked to Aadhaar,Rythu Bandhu Investment Support Scheme,Kisan Credit Card (KCC),No,Physical Original for Verification Only,Yes,UIDAI / Telecom Service Provider
+DOC017,Tenant Farmer / Sharecropper Certificate,Micro Irrigation Fund (MIF),Solar Pump / Renewable Energy Agri Loan,Yes,Original + Photocopy (Physical Submission),No,Mandal Revenue Office (MRO)
+DOC018,Bank Guarantee / Surety Bond,National Livestock Mission,Gold Loan for Agricultural Purposes,Yes,Original + Photocopy (Physical Submission),Yes,Issuing Bank Branch
+DOC019,Project Report / Detailed Project Report (DPR),Pradhan Mantri Kisan Samman Nidhi (PM-KISAN),Agri Infrastructure & Cold Storage Loan,Yes,"PDF (Scanned Copy, max 2MB)",Yes,Chartered Accountant / Consultant
+DOC020,Quotation from Authorized Dealer,Soil Health Card Scheme,Horticulture & Plantation Loan,No,"PDF (Scanned Copy, max 2MB)",No,Equipment Dealer / Manufacturer
+DOC021,Tenant Farmer / Sharecropper Certificate,Mission for Integrated Development of Horticulture (MIDH),Micro Irrigation / Drip & Sprinkler Loan,Yes,"PDF (Scanned Copy, max 2MB)",Yes,Mandal Revenue Office (MRO)
+DOC022,Tenant Farmer / Sharecropper Certificate,Pradhan Mantri Kisan Samman Nidhi (PM-KISAN),Kisan Credit Card (KCC),No,"JPEG / PNG (Scanned Copy, max 1MB)",Yes,Mandal Revenue Office (MRO)
+DOC023,Village / Revenue Officer Certificate,"Formation and Promotion of 10,000 FPOs Scheme",Gold Loan for Agricultural Purposes,No,PDF (Digitally Signed / e-Sign),Yes,Village Revenue Officer (VRO)
+DOC024,Insurance Proposal Form,Rashtriya Krishi Vikas Yojana (RKVY),Gold Loan for Agricultural Purposes,No,"PDF (Scanned Copy, max 2MB)",Yes,Insurance Company / Agent
+DOC025,Encumbrance Certificate,Micro Irrigation Fund (MIF),Solar Pump / Renewable Energy Agri Loan,Yes,Original + Photocopy (Physical Submission),No,Sub-Registrar Office
+DOC026,Aadhaar Card,Telangana Micro Irrigation Project Subsidy,Farmer Producer Organisation (FPO) Term Loan,Yes,"PDF (Scanned Copy, max 2MB)",Yes,UIDAI (Unique Identification Authority of India)
+DOC027,Previous Subsidy Non-Availment Declaration,Sub-Mission on Agricultural Mechanization (SMAM),Kisan Credit Card (KCC),Yes,"PDF (Scanned Copy, max 2MB)",Yes,Self-Declaration / Agriculture Department
+DOC028,Address Proof (Utility Bill),Pradhan Mantri Krishi Sinchayee Yojana (PMKSY),,Yes,"PDF (Scanned Copy, max 2MB)",No,Respective Utility Provider
+DOC029,FPO Registration Certificate,Micro Irrigation Fund (MIF),Farmer Producer Organisation (FPO) Term Loan,No,PDF (Digitally Signed / e-Sign),Yes,Registrar of Companies / Cooperative Societies
+DOC030,Village / Revenue Officer Certificate,"Formation and Promotion of 10,000 FPOs Scheme",Dairy & Livestock Development Loan,No,Physical Original for Verification Only,Yes,Village Revenue Officer (VRO)
+DOC031,Voter ID Card,Micro Irrigation Fund (MIF),Crop Loan (Seasonal Agricultural Operations),No,PDF or JPEG (Self-Attested),Yes,Election Commission of India
+DOC032,Caste Certificate,Rashtriya Krishi Vikas Yojana (RKVY),Warehouse Receipt / Post-Harvest Loan,No,Physical Original for Verification Only,Yes,Tahsildar / Revenue Department
+DOC033,Previous Subsidy Non-Availment Declaration,Telangana Organic Farming Promotion Scheme,Solar Pump / Renewable Energy Agri Loan,Yes,PDF (Digitally Signed / e-Sign),Yes,Self-Declaration / Agriculture Department
+DOC034,Collateral / Security Documents,Rashtriya Krishi Vikas Yojana (RKVY),Horticulture & Plantation Loan,No,PDF (Digitally Signed / e-Sign),No,Sub-Registrar Office
+DOC035,Address Proof (Utility Bill),Micro Irrigation Fund (MIF),Crop Loan (Seasonal Agricultural Operations),Yes,"PDF (Scanned Copy, max 2MB)",Yes,Respective Utility Provider
+DOC036,Crop Sowing Certificate,,Kisan Credit Card (KCC),Yes,PDF (Digitally Signed / e-Sign),Yes,Village Agriculture Extension Officer (VAEO)
+DOC037,No Dues Certificate from Other Banks,Telangana Millet Mission,Gold Loan for Agricultural Purposes,Yes,"PDF (Scanned Copy, max 2MB)",No,Issuing Bank Branch
+DOC038,Ear-Tag / Animal Identification Certificate,Soil Health Card Scheme,Fisheries & Aquaculture Loan,No,"JPEG / PNG (Scanned Copy, max 1MB)",Yes,Department of Animal Husbandry
+DOC039,Income Certificate,Telangana Organic Farming Promotion Scheme,Warehouse Receipt / Post-Harvest Loan,Yes,PDF (Digitally Signed / e-Sign),Yes,Tahsildar / Revenue Department
+DOC040,Ear-Tag / Animal Identification Certificate,"Formation and Promotion of 10,000 FPOs Scheme",Crop Loan (Seasonal Agricultural Operations),No,PDF or JPEG (Self-Attested),Yes,Department of Animal Husbandry
+DOC041,Quotation from Authorized Dealer,Telangana Organic Farming Promotion Scheme,Gold Loan for Agricultural Purposes,No,"PDF (Scanned Copy, max 2MB)",Yes,Equipment Dealer / Manufacturer
+DOC042,Previous Subsidy Non-Availment Declaration,Sub-Mission on Agricultural Mechanization (SMAM),Farmer Producer Organisation (FPO) Term Loan,Yes,PDF (Digitally Signed / e-Sign),No,Self-Declaration / Agriculture Department
+DOC043,Bank Passbook / Cancelled Cheque,National Livestock Mission,Kisan Credit Card (KCC),Yes,"PDF (Scanned Copy, max 2MB)",Yes,Issuing Bank Branch
+DOC044,Village / Revenue Officer Certificate,Sub-Mission on Agricultural Mechanization (SMAM),Kisan Credit Card (KCC),No,Physical Original for Verification Only,No,Village Revenue Officer (VRO)
+DOC045,Project Report / Detailed Project Report (DPR),Telangana Horticulture Mission,Micro Irrigation / Drip & Sprinkler Loan,Yes,"JPEG / PNG (Scanned Copy, max 1MB)",Yes,Chartered Accountant / Consultant
+DOC046,Address Proof (Utility Bill),Pradhan Mantri Krishi Sinchayee Yojana (PMKSY),Crop Loan (Seasonal Agricultural Operations),Yes,Physical Original for Verification Only,Yes,Respective Utility Provider
+DOC047,Mobile Number Linked to Aadhaar,Pradhan Mantri Krishi Sinchayee Yojana (PMKSY),Farm Mechanization / Tractor Loan,No,"JPEG / PNG (Scanned Copy, max 1MB)",Yes,UIDAI / Telecom Service Provider
+DOC048,Village / Revenue Officer Certificate,National Mission on Natural Farming (NMNF),Warehouse Receipt / Post-Harvest Loan,Yes,"JPEG / PNG (Scanned Copy, max 1MB)",Yes,Village Revenue Officer (VRO)
+DOC049,Encumbrance Certificate,Telangana Micro Irrigation Project Subsidy,Horticulture & Plantation Loan,No,PDF (Digitally Signed / e-Sign),No,Sub-Registrar Office
+DOC050,FPO Registration Certificate,,Crop Loan (Seasonal Agricultural Operations),Yes,PDF (Digitally Signed / e-Sign),Yes,Registrar of Companies / Cooperative Societies
+DOC051,Existing Loan Statement (if any),Micro Irrigation Fund (MIF),Fisheries & Aquaculture Loan,No,PDF or JPEG (Self-Attested),No,Concerned Bank Branch
+DOC052,Encumbrance Certificate,Paramparagat Krishi Vikas Yojana (PKVY),Solar Pump / Renewable Energy Agri Loan,Yes,Physical Original for Verification Only,Yes,Sub-Registrar Office
+DOC053,Crop Sowing Certificate,Mission for Integrated Development of Horticulture (MIDH),Farm Mechanization / Tractor Loan,Yes,"JPEG / PNG (Scanned Copy, max 1MB)",No,Village Agriculture Extension Officer (VAEO)
+DOC054,Insurance Proposal Form,Pradhan Mantri Matsya Sampada Yojana (PMMSY),Micro Irrigation / Drip & Sprinkler Loan,Yes,"JPEG / PNG (Scanned Copy, max 1MB)",Yes,Insurance Company / Agent
+DOC055,Land Ownership / Pattadar Passbook,Rythu Bandhu Investment Support Scheme,Gold Loan for Agricultural Purposes,Yes,Physical Original for Verification Only,Yes,"Revenue Department, Telangana"
+DOC056,Passport Size Photograph,National Food Security Mission (NFSM),Kisan Credit Card (KCC),Yes,PDF or JPEG (Self-Attested),Yes,Self-Attested / Not Applicable
+DOC057,Encumbrance Certificate,Rythu Bima Life Insurance Scheme,Solar Pump / Renewable Energy Agri Loan,Yes,Physical Original for Verification Only,Yes,Sub-Registrar Office
+DOC058,Project Report / Detailed Project Report (DPR),Soil Health Card Scheme,Fisheries & Aquaculture Loan,Yes,PDF (Digitally Signed / e-Sign),Yes,Chartered Accountant / Consultant
+DOC059,KCC Application Form,"Formation and Promotion of 10,000 FPOs Scheme",Farm Mechanization / Tractor Loan,Yes,PDF (Digitally Signed / e-Sign),Yes,Issuing Bank Branch
+DOC060,Village / Revenue Officer Certificate,Rashtriya Krishi Vikas Yojana (RKVY),Kisan Credit Card (KCC),No,PDF or JPEG (Self-Attested),No,Village Revenue Officer (VRO)
+DOC061,Quotation from Authorized Dealer,Rythu Bima Life Insurance Scheme,Farmer Producer Organisation (FPO) Term Loan,No,"PDF (Scanned Copy, max 2MB)",Yes,Equipment Dealer / Manufacturer
+DOC062,FPO Registration Certificate,National Mission on Natural Farming (NMNF),Warehouse Receipt / Post-Harvest Loan,No,PDF (Digitally Signed / e-Sign),No,Registrar of Companies / Cooperative Societies
+DOC063,Land Ownership / Pattadar Passbook,PM Kusum Scheme (Solar Pump & Grid Connected Plants),Warehouse Receipt / Post-Harvest Loan,Yes,"JPEG / PNG (Scanned Copy, max 1MB)",Yes,"Revenue Department, Telangana"
+DOC064,Mobile Number Linked to Aadhaar,Sub-Mission on Agricultural Mechanization (SMAM),Farm Mechanization / Tractor Loan,Yes,PDF (Digitally Signed / e-Sign),Yes,UIDAI / Telecom Service Provider
+DOC065,Crop Sowing Certificate,Pradhan Mantri Krishi Sinchayee Yojana (PMKSY),Fisheries & Aquaculture Loan,Yes,"JPEG / PNG (Scanned Copy, max 1MB)",Yes,Village Agriculture Extension Officer (VAEO)
+DOC066,Encumbrance Certificate,,Kisan Credit Card (KCC),Yes,"PDF (Scanned Copy, max 2MB)",Yes,Sub-Registrar Office
+DOC067,Encumbrance Certificate,Mission for Integrated Development of Horticulture (MIDH),Dairy & Livestock Development Loan,No,PDF (Digitally Signed / e-Sign),Yes,Sub-Registrar Office
+DOC068,Bank Guarantee / Surety Bond,Rythu Bandhu Investment Support Scheme,Crop Loan (Seasonal Agricultural Operations),Yes,Original + Photocopy (Physical Submission),No,Issuing Bank Branch
+DOC069,Bank Passbook / Cancelled Cheque,Pradhan Mantri Kisan Samman Nidhi (PM-KISAN),Kisan Credit Card (KCC),Yes,Physical Original for Verification Only,Yes,Issuing Bank Branch
+DOC070,Quotation from Authorized Dealer,Rashtriya Krishi Vikas Yojana (RKVY),Horticulture & Plantation Loan,Yes,"JPEG / PNG (Scanned Copy, max 1MB)",Yes,Equipment Dealer / Manufacturer
+DOC071,Insurance Proposal Form,Mission for Integrated Development of Horticulture (MIDH),Gold Loan for Agricultural Purposes,No,Physical Original for Verification Only,Yes,Insurance Company / Agent
+DOC072,Address Proof (Utility Bill),Telangana Micro Irrigation Project Subsidy,Agri Infrastructure & Cold Storage Loan,No,"JPEG / PNG (Scanned Copy, max 1MB)",No,Respective Utility Provider
+DOC073,Water Source Certificate (Borewell/Canal),Paramparagat Krishi Vikas Yojana (PKVY),Micro Irrigation / Drip & Sprinkler Loan,Yes,PDF or JPEG (Self-Attested),Yes,"Irrigation Department, Telangana"
+DOC074,Livestock Health & Vaccination Certificate,Telangana Farm Mechanization Scheme,Crop Loan (Seasonal Agricultural Operations),Yes,PDF or JPEG (Self-Attested),Yes,"Veterinary Department, Telangana"
+DOC075,Mobile Number Linked to Aadhaar,Telangana Millet Mission,Farmer Producer Organisation (FPO) Term Loan,No,"PDF (Scanned Copy, max 2MB)",Yes,UIDAI / Telecom Service Provider
+DOC076,Quotation from Authorized Dealer,"Formation and Promotion of 10,000 FPOs Scheme",Agri Infrastructure & Cold Storage Loan,Yes,Original + Photocopy (Physical Submission),Yes,Equipment Dealer / Manufacturer
+DOC077,Income Certificate,Soil Health Card Scheme,Fisheries & Aquaculture Loan,Yes,PDF or JPEG (Self-Attested),No,Tahsildar / Revenue Department
+DOC078,Insurance Proposal Form,National Mission on Natural Farming (NMNF),Agri Infrastructure & Cold Storage Loan,Yes,Original + Photocopy (Physical Submission),Yes,Insurance Company / Agent
+DOC079,Soil Health Card,Mission for Integrated Development of Horticulture (MIDH),,Yes,"PDF (Scanned Copy, max 2MB)",No,"Department of Agriculture, Telangana"
+DOC080,Livestock Health & Vaccination Certificate,Mission for Integrated Development of Horticulture (MIDH),,No,"PDF (Scanned Copy, max 2MB)",Yes,"Veterinary Department, Telangana"
+DOC081,Previous Subsidy Non-Availment Declaration,Telangana Millet Mission,Horticulture & Plantation Loan,Yes,Original + Photocopy (Physical Submission),Yes,Self-Declaration / Agriculture Department
+DOC082,Ration Card,Micro Irrigation Fund (MIF),Warehouse Receipt / Post-Harvest Loan,Yes,"PDF (Scanned Copy, max 2MB)",Yes,Civil Supplies Department
+DOC083,KCC Application Form,Telangana Horticulture Mission,Gold Loan for Agricultural Purposes,Yes,Original + Photocopy (Physical Submission),Yes,Issuing Bank Branch
+DOC084,Encumbrance Certificate,Sub-Mission on Agricultural Mechanization (SMAM),Farm Mechanization / Tractor Loan,Yes,"PDF (Scanned Copy, max 2MB)",Yes,Sub-Registrar Office
+DOC085,Aadhaar Card,PM Kusum Scheme (Solar Pump & Grid Connected Plants),,Yes,Original + Photocopy (Physical Submission),Yes,UIDAI (Unique Identification Authority of India)
+DOC086,Quotation from Authorized Dealer,Rythu Bima Life Insurance Scheme,Crop Loan (Seasonal Agricultural Operations),No,Original + Photocopy (Physical Submission),No,Equipment Dealer / Manufacturer
+DOC087,Collateral / Security Documents,Telangana Farm Mechanization Scheme,Crop Loan (Seasonal Agricultural Operations),Yes,Original + Photocopy (Physical Submission),Yes,Sub-Registrar Office
+DOC088,Bank Guarantee / Surety Bond,PM Kusum Scheme (Solar Pump & Grid Connected Plants),Farmer Producer Organisation (FPO) Term Loan,No,"JPEG / PNG (Scanned Copy, max 1MB)",Yes,Issuing Bank Branch
+DOC089,Income Certificate,Telangana Farm Mechanization Scheme,Micro Irrigation / Drip & Sprinkler Loan,No,"PDF (Scanned Copy, max 2MB)",No,Tahsildar / Revenue Department
+DOC090,Crop Sowing Certificate,Rythu Bima Life Insurance Scheme,Micro Irrigation / Drip & Sprinkler Loan,Yes,PDF or JPEG (Self-Attested),Yes,Village Agriculture Extension Officer (VAEO)
+DOC091,Ration Card,National Livestock Mission,Micro Irrigation / Drip & Sprinkler Loan,No,"JPEG / PNG (Scanned Copy, max 1MB)",Yes,Civil Supplies Department
+DOC092,Livestock Health & Vaccination Certificate,Telangana Millet Mission,,Yes,Physical Original for Verification Only,Yes,"Veterinary Department, Telangana"
+DOC093,Water Source Certificate (Borewell/Canal),Telangana Millet Mission,Kisan Credit Card (KCC),No,"PDF (Scanned Copy, max 2MB)",No,"Irrigation Department, Telangana"
+DOC094,Mobile Number Linked to Aadhaar,National Livestock Mission,Fisheries & Aquaculture Loan,Yes,Original + Photocopy (Physical Submission),Yes,UIDAI / Telecom Service Provider
+DOC095,Bank Guarantee / Surety Bond,Micro Irrigation Fund (MIF),,Yes,PDF or JPEG (Self-Attested),No,Issuing Bank Branch
+DOC096,Caste Certificate,Telangana Organic Farming Promotion Scheme,Gold Loan for Agricultural Purposes,Yes,"JPEG / PNG (Scanned Copy, max 1MB)",Yes,Tahsildar / Revenue Department
+DOC097,Address Proof (Utility Bill),"Formation and Promotion of 10,000 FPOs Scheme",Crop Loan (Seasonal Agricultural Operations),Yes,"PDF (Scanned Copy, max 2MB)",Yes,Respective Utility Provider
+DOC098,Ear-Tag / Animal Identification Certificate,Pradhan Mantri Kisan Samman Nidhi (PM-KISAN),Farm Mechanization / Tractor Loan,Yes,"PDF (Scanned Copy, max 2MB)",Yes,Department of Animal Husbandry
+DOC099,No Dues Certificate from Other Banks,Sub-Mission on Agricultural Mechanization (SMAM),Dairy & Livestock Development Loan,No,PDF (Digitally Signed / e-Sign),Yes,Issuing Bank Branch
+DOC100,KCC Application Form,Pradhan Mantri Krishi Sinchayee Yojana (PMKSY),Agri Infrastructure & Cold Storage Loan,Yes,Physical Original for Verification Only,Yes,Issuing Bank Branch
+DOC101,Village / Revenue Officer Certificate,,Horticulture & Plantation Loan,Yes,Physical Original for Verification Only,Yes,Village Revenue Officer (VRO)
+DOC102,Aadhaar Card,Paramparagat Krishi Vikas Yojana (PKVY),Dairy & Livestock Development Loan,Yes,"PDF (Scanned Copy, max 2MB)",Yes,UIDAI (Unique Identification Authority of India)
+DOC103,FPO Registration Certificate,National Livestock Mission,Crop Loan (Seasonal Agricultural Operations),Yes,"JPEG / PNG (Scanned Copy, max 1MB)",Yes,Registrar of Companies / Cooperative Societies
+DOC104,Ear-Tag / Animal Identification Certificate,PM Kusum Scheme (Solar Pump & Grid Connected Plants),Gold Loan for Agricultural Purposes,No,PDF (Digitally Signed / e-Sign),Yes,Department of Animal Husbandry
+DOC105,Tenant Farmer / Sharecropper Certificate,National Food Security Mission (NFSM),Micro Irrigation / Drip & Sprinkler Loan,Yes,"JPEG / PNG (Scanned Copy, max 1MB)",No,Mandal Revenue Office (MRO)
+DOC106,Livestock Health & Vaccination Certificate,Pradhan Mantri Krishi Sinchayee Yojana (PMKSY),Crop Loan (Seasonal Agricultural Operations),Yes,PDF or JPEG (Self-Attested),Yes,"Veterinary Department, Telangana"
+DOC107,Tenant Farmer / Sharecropper Certificate,Rythu Bima Life Insurance Scheme,Dairy & Livestock Development Loan,No,Original + Photocopy (Physical Submission),No,Mandal Revenue Office (MRO)
+DOC108,Encumbrance Certificate,Pradhan Mantri Matsya Sampada Yojana (PMMSY),Horticulture & Plantation Loan,Yes,PDF or JPEG (Self-Attested),No,Sub-Registrar Office
+DOC109,Post-Mortem Report (for Livestock Claims),Telangana Millet Mission,Kisan Credit Card (KCC),No,"PDF (Scanned Copy, max 2MB)",Yes,"Veterinary Department, Telangana"
+DOC110,PAN Card,Rythu Bima Life Insurance Scheme,Gold Loan for Agricultural Purposes,No,PDF or JPEG (Self-Attested),No,"Income Tax Department, Government of India"
+DOC111,Land Ownership / Pattadar Passbook,Pradhan Mantri Matsya Sampada Yojana (PMMSY),,Yes,Original + Photocopy (Physical Submission),Yes,"Revenue Department, Telangana"
+DOC112,Encumbrance Certificate,National Mission on Natural Farming (NMNF),Crop Loan (Seasonal Agricultural Operations),No,PDF or JPEG (Self-Attested),Yes,Sub-Registrar Office
+DOC113,Post-Mortem Report (for Livestock Claims),Telangana Millet Mission,Micro Irrigation / Drip & Sprinkler Loan,Yes,PDF or JPEG (Self-Attested),Yes,"Veterinary Department, Telangana"
+DOC114,Voter ID Card,PM Kusum Scheme (Solar Pump & Grid Connected Plants),Crop Loan (Seasonal Agricultural Operations),No,Physical Original for Verification Only,No,Election Commission of India
+DOC115,KCC Application Form,Rythu Bima Life Insurance Scheme,Farmer Producer Organisation (FPO) Term Loan,Yes,PDF or JPEG (Self-Attested),No,Issuing Bank Branch
+DOC116,Bank Guarantee / Surety Bond,Telangana Millet Mission,Kisan Credit Card (KCC),No,PDF (Digitally Signed / e-Sign),No,Issuing Bank Branch
+DOC117,FPO Registration Certificate,Micro Irrigation Fund (MIF),Dairy & Livestock Development Loan,No,PDF (Digitally Signed / e-Sign),Yes,Registrar of Companies / Cooperative Societies
+DOC118,Ear-Tag / Animal Identification Certificate,Mission for Integrated Development of Horticulture (MIDH),Kisan Credit Card (KCC),Yes,Original + Photocopy (Physical Submission),Yes,Department of Animal Husbandry
+DOC119,Address Proof (Utility Bill),"Formation and Promotion of 10,000 FPOs Scheme",Warehouse Receipt / Post-Harvest Loan,Yes,PDF or JPEG (Self-Attested),Yes,Respective Utility Provider
+DOC120,Aadhaar Card,Telangana Farm Mechanization Scheme,Agri Infrastructure & Cold Storage Loan,Yes,"JPEG / PNG (Scanned Copy, max 1MB)",Yes,UIDAI (Unique Identification Authority of India)
+DOC121,Collateral / Security Documents,Micro Irrigation Fund (MIF),Kisan Credit Card (KCC),Yes,PDF or JPEG (Self-Attested),Yes,Sub-Registrar Office
+DOC122,Project Report / Detailed Project Report (DPR),Rythu Bima Life Insurance Scheme,Warehouse Receipt / Post-Harvest Loan,No,Original + Photocopy (Physical Submission),No,Chartered Accountant / Consultant
+DOC123,Village / Revenue Officer Certificate,Rythu Bima Life Insurance Scheme,Gold Loan for Agricultural Purposes,Yes,Physical Original for Verification Only,Yes,Village Revenue Officer (VRO)
+DOC124,Ear-Tag / Animal Identification Certificate,National Livestock Mission,Horticulture & Plantation Loan,Yes,PDF (Digitally Signed / e-Sign),No,Department of Animal Husbandry
+DOC125,PAN Card,Soil Health Card Scheme,Crop Loan (Seasonal Agricultural Operations),No,PDF or JPEG (Self-Attested),Yes,"Income Tax Department, Government of India"
+DOC126,Soil Health Card,Rashtriya Krishi Vikas Yojana (RKVY),Dairy & Livestock Development Loan,Yes,"JPEG / PNG (Scanned Copy, max 1MB)",Yes,"Department of Agriculture, Telangana"
+DOC127,Tenant Farmer / Sharecropper Certificate,Telangana Farm Mechanization Scheme,Warehouse Receipt / Post-Harvest Loan,Yes,"PDF (Scanned Copy, max 2MB)",Yes,Mandal Revenue Office (MRO)
+DOC128,Tenant Farmer / Sharecropper Certificate,National Livestock Mission,Horticulture & Plantation Loan,No,"JPEG / PNG (Scanned Copy, max 1MB)",Yes,Mandal Revenue Office (MRO)
+DOC129,Ear-Tag / Animal Identification Certificate,Telangana Farm Mechanization Scheme,Crop Loan (Seasonal Agricultural Operations),No,PDF (Digitally Signed / e-Sign),Yes,Department of Animal Husbandry
+DOC130,Encumbrance Certificate,Sub-Mission on Agricultural Mechanization (SMAM),,No,"JPEG / PNG (Scanned Copy, max 1MB)",Yes,Sub-Registrar Office
+DOC131,Collateral / Security Documents,National Food Security Mission (NFSM),Farm Mechanization / Tractor Loan,No,Original + Photocopy (Physical Submission),Yes,Sub-Registrar Office
+DOC132,Tenant Farmer / Sharecropper Certificate,Rythu Bima Life Insurance Scheme,Kisan Credit Card (KCC),No,"JPEG / PNG (Scanned Copy, max 1MB)",Yes,Mandal Revenue Office (MRO)
+DOC133,Ration Card,"Formation and Promotion of 10,000 FPOs Scheme",Kisan Credit Card (KCC),Yes,Physical Original for Verification Only,Yes,Civil Supplies Department
+DOC134,Mobile Number Linked to Aadhaar,Rythu Bandhu Investment Support Scheme,Farmer Producer Organisation (FPO) Term Loan,Yes,Original + Photocopy (Physical Submission),Yes,UIDAI / Telecom Service Provider
+DOC135,PAN Card,Telangana Micro Irrigation Project Subsidy,Micro Irrigation / Drip & Sprinkler Loan,Yes,PDF or JPEG (Self-Attested),Yes,"Income Tax Department, Government of India"
+DOC136,Land Ownership / Pattadar Passbook,Telangana Micro Irrigation Project Subsidy,Farm Mechanization / Tractor Loan,Yes,Original + Photocopy (Physical Submission),No,"Revenue Department, Telangana"
+DOC137,Land Ownership / Pattadar Passbook,PM Kusum Scheme (Solar Pump & Grid Connected Plants),Micro Irrigation / Drip & Sprinkler Loan,Yes,"PDF (Scanned Copy, max 2MB)",Yes,"Revenue Department, Telangana"
+DOC138,Bank Guarantee / Surety Bond,Pradhan Mantri Kisan Samman Nidhi (PM-KISAN),Solar Pump / Renewable Energy Agri Loan,Yes,"JPEG / PNG (Scanned Copy, max 1MB)",Yes,Issuing Bank Branch
+DOC139,KCC Application Form,PM Kusum Scheme (Solar Pump & Grid Connected Plants),Gold Loan for Agricultural Purposes,Yes,PDF or JPEG (Self-Attested),Yes,Issuing Bank Branch
+DOC140,KCC Application Form,National Mission on Natural Farming (NMNF),Micro Irrigation / Drip & Sprinkler Loan,No,Physical Original for Verification Only,Yes,Issuing Bank Branch
+DOC141,Collateral / Security Documents,Pradhan Mantri Matsya Sampada Yojana (PMMSY),Farmer Producer Organisation (FPO) Term Loan,No,"PDF (Scanned Copy, max 2MB)",Yes,Sub-Registrar Office
+DOC142,PAN Card,Micro Irrigation Fund (MIF),Crop Loan (Seasonal Agricultural Operations),Yes,PDF or JPEG (Self-Attested),Yes,"Income Tax Department, Government of India"
+DOC143,Bank Passbook / Cancelled Cheque,Telangana Farm Mechanization Scheme,Farmer Producer Organisation (FPO) Term Loan,Yes,"JPEG / PNG (Scanned Copy, max 1MB)",Yes,Issuing Bank Branch
+DOC144,Ration Card,Micro Irrigation Fund (MIF),Fisheries & Aquaculture Loan,Yes,Original + Photocopy (Physical Submission),Yes,Civil Supplies Department
+DOC145,Insurance Proposal Form,Pradhan Mantri Fasal Bima Yojana (PMFBY),Agri Infrastructure & Cold Storage Loan,Yes,"JPEG / PNG (Scanned Copy, max 1MB)",Yes,Insurance Company / Agent
+DOC146,Tenant Farmer / Sharecropper Certificate,Telangana Farm Mechanization Scheme,Farmer Producer Organisation (FPO) Term Loan,Yes,"JPEG / PNG (Scanned Copy, max 1MB)",Yes,Mandal Revenue Office (MRO)
+DOC147,Income Certificate,PM Kusum Scheme (Solar Pump & Grid Connected Plants),Dairy & Livestock Development Loan,Yes,PDF (Digitally Signed / e-Sign),Yes,Tahsildar / Revenue Department
+DOC148,Encumbrance Certificate,Pradhan Mantri Fasal Bima Yojana (PMFBY),Horticulture & Plantation Loan,Yes,"JPEG / PNG (Scanned Copy, max 1MB)",Yes,Sub-Registrar Office
+DOC149,Bank Guarantee / Surety Bond,Telangana Micro Irrigation Project Subsidy,Gold Loan for Agricultural Purposes,Yes,Physical Original for Verification Only,Yes,Issuing Bank Branch
+DOC150,Mobile Number Linked to Aadhaar,PM Kusum Scheme (Solar Pump & Grid Connected Plants),Horticulture & Plantation Loan,No,PDF or JPEG (Self-Attested),Yes,UIDAI / Telecom Service Provider

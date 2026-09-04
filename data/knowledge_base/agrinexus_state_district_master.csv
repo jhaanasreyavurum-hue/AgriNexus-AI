@@ -1,0 +1,69 @@
+state_id,state_name,district_id,district_name,latitude,longitude,agriculture_zone,major_crop
+ST01,Andhra Pradesh,DIS001,Guntur,16.3067,80.4365,East Coast Plains and Hills,Paddy
+ST02,Arunachal Pradesh,DIS002,Papum Pare,27.1029,93.6913,Eastern Himalayan Region,Maize
+ST03,Assam,DIS003,Nagaon,26.348,92.684,Eastern Himalayan Region,Paddy
+ST04,Bihar,DIS004,Patna,25.5941,85.1376,Middle Gangetic Plains,Paddy
+ST05,Chhattisgarh,DIS005,Raipur,21.2514,81.6296,Eastern Plateau and Hills,Paddy
+ST06,Goa,DIS006,North Goa,15.4909,73.8278,West Coast Plains and Hills,Paddy
+ST07,Gujarat,DIS007,Rajkot,22.3039,70.8022,Gujarat Plains and Hills,Groundnut
+ST08,Haryana,DIS008,Karnal,29.6857,76.9905,Trans-Gangetic Plains,Wheat
+ST09,Himachal Pradesh,DIS009,Shimla,31.1048,77.1734,Western Himalayan Region,Apple
+ST10,Jharkhand,DIS010,Ranchi,23.3441,85.3096,Eastern Plateau and Hills,Paddy
+ST11,Karnataka,DIS011,Belagavi,15.8497,74.4977,Southern Plateau and Hills,Maize
+ST12,Kerala,DIS012,Palakkad,10.7867,76.6548,West Coast Plains and Hills,Paddy
+ST13,Madhya Pradesh,DIS013,Indore,22.7196,75.8577,Central Plateau and Hills,Soybean
+ST14,Maharashtra,DIS014,Nashik,19.9975,73.7898,Western Plateau and Hills,Cotton
+ST15,Manipur,DIS015,Imphal West,24.817,93.9368,Eastern Himalayan Region,Paddy
+ST16,Meghalaya,DIS016,East Khasi Hills,25.5788,91.8933,Eastern Himalayan Region,Maize
+ST17,Mizoram,DIS017,Aizawl,23.7271,92.7176,Eastern Himalayan Region,Paddy
+ST18,Nagaland,DIS018,Kohima,25.6751,94.1086,Eastern Himalayan Region,Paddy
+ST19,Odisha,DIS019,Cuttack,20.4625,85.883,East Coast Plains and Hills,Paddy
+ST20,Punjab,DIS020,Ludhiana,30.901,75.8573,Trans-Gangetic Plains,Wheat
+ST21,Rajasthan,DIS021,Sri Ganganagar,29.9094,73.8794,Western Dry Region,Mustard
+ST22,Sikkim,DIS022,East Sikkim,27.3389,88.6065,Western Himalayan Region,Maize
+ST23,Tamil Nadu,DIS023,Thanjavur,10.787,79.1378,Southern Plateau and Hills,Paddy
+ST24,Tripura,DIS024,West Tripura,23.8315,91.2868,Eastern Himalayan Region,Paddy
+ST25,Uttar Pradesh,DIS025,Meerut,28.9845,77.7064,Upper Gangetic Plains,Sugarcane
+ST26,Uttarakhand,DIS026,Udham Singh Nagar,28.9754,79.4041,Western Himalayan Region,Wheat
+ST27,West Bengal,DIS027,Bardhaman,23.2324,87.8615,Lower Gangetic Plains,Paddy
+ST28,Andaman and Nicobar Islands,DIS028,South Andaman,11.6234,92.7265,The Islands Region,Coconut
+ST29,Chandigarh,DIS029,Chandigarh,30.7333,76.7794,Trans-Gangetic Plains,Wheat
+ST30,Dadra and Nagar Haveli and Daman and Diu,DIS030,Daman,20.3974,72.8328,Gujarat Plains and Hills,Paddy
+ST31,Delhi (NCT),DIS031,New Delhi,28.6139,77.209,Trans-Gangetic Plains,Wheat
+ST32,Jammu and Kashmir,DIS032,Srinagar,34.0837,74.7973,Western Himalayan Region,Apple
+ST33,Ladakh,DIS033,Leh,34.1526,77.5771,Western Himalayan Region,Barley
+ST34,Lakshadweep,DIS034,Kavaratti,10.5669,72.642,The Islands Region,Coconut
+ST35,Puducherry,DIS035,Puducherry,11.9416,79.8083,East Coast Plains and Hills,Paddy
+ST36,Telangana,DIS036,Adilabad,19.6641,78.532,Southern Plateau and Hills,Cotton
+ST36,Telangana,DIS037,Nizamabad,18.6725,78.0941,Southern Plateau and Hills,Turmeric
+ST36,Telangana,DIS038,Karimnagar,18.4386,79.1288,Southern Plateau and Hills,Paddy
+ST36,Telangana,DIS039,Warangal Urban,17.9689,79.5941,Southern Plateau and Hills,Paddy
+ST36,Telangana,DIS040,Warangal Rural,17.9784,79.4586,Southern Plateau and Hills,Cotton
+ST36,Telangana,DIS041,Khammam,17.2473,80.1514,Southern Plateau and Hills,Chilli
+ST36,Telangana,DIS042,Nalgonda,17.0575,79.269,Southern Plateau and Hills,Paddy
+ST36,Telangana,DIS043,Mahbubnagar,16.746,77.9971,Southern Plateau and Hills,Castor
+ST36,Telangana,DIS044,Rangareddy,17.32,78.48,Southern Plateau and Hills,Vegetables
+ST36,Telangana,DIS045,Medak,18.0489,78.268,Southern Plateau and Hills,Maize
+ST36,Telangana,DIS046,Suryapet,17.1401,79.6183,Southern Plateau and Hills,Paddy
+ST36,Telangana,DIS047,Jagtial,18.7909,78.911,Southern Plateau and Hills,Paddy
+ST36,Telangana,DIS048,Siddipet,18.1018,78.852,Southern Plateau and Hills,Paddy
+ST36,Telangana,DIS049,Sangareddy,17.6255,78.087,Southern Plateau and Hills,Maize
+ST36,Telangana,DIS050,Nagarkurnool,16.4842,78.322,Southern Plateau and Hills,Red Gram (Tur Dal)
+ST36,Telangana,DIS051,Kamareddy,18.3197,78.3436,Southern Plateau and Hills,Cotton
+ST36,Telangana,DIS052,Jangaon,17.7255,79.1808,Southern Plateau and Hills,Cotton
+ST36,Telangana,DIS053,Bhadradri Kothagudem,17.5545,80.6178,Southern Plateau and Hills,Paddy
+ST36,Telangana,DIS054,Mahabubabad,17.5981,80.0021,Southern Plateau and Hills,Cotton
+ST36,Telangana,DIS055,Jayashankar Bhupalpally,18.4322,79.888,Southern Plateau and Hills,Paddy
+ST36,Telangana,DIS056,Peddapalli,18.6151,79.3742,Southern Plateau and Hills,Paddy
+ST36,Telangana,DIS057,Rajanna Sircilla,18.3835,78.8135,Southern Plateau and Hills,Maize
+ST36,Telangana,DIS058,Yadadri Bhuvanagiri,17.5474,79.0866,Southern Plateau and Hills,Paddy
+ST36,Telangana,DIS059,Vikarabad,17.3378,77.9037,Southern Plateau and Hills,Groundnut
+ST36,Telangana,DIS060,Wanaparthy,16.3606,78.0629,Southern Plateau and Hills,Paddy
+ST36,Telangana,DIS061,Jogulamba Gadwal,16.234,77.806,Southern Plateau and Hills,Paddy
+ST36,Telangana,DIS062,Narayanpet,16.746,77.4939,Southern Plateau and Hills,Cotton
+ST36,Telangana,DIS063,Medchal-Malkajgiri,17.6297,78.4747,Southern Plateau and Hills,Vegetables
+ST36,Telangana,DIS064,Hyderabad,17.385,78.4867,Southern Plateau and Hills,Not Applicable - Urban District
+ST36,Telangana,DIS065,Kumuram Bheem Asifabad,19.3616,79.2871,Southern Plateau and Hills,Cotton
+ST36,Telangana,DIS066,Mancherial,18.8712,79.4644,Southern Plateau and Hills,Paddy
+ST36,Telangana,DIS067,Nirmal,19.0965,78.344,Southern Plateau and Hills,Cotton
+ST36,Telangana,DIS068,Mulugu,18.1968,80.0011,Southern Plateau and Hills,Paddy

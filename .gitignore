@@ -1,0 +1,48 @@
+# ---- secrets: never commit ----
+.streamlit/secrets.toml
+.env
+.env.*
+*.key
+*.pem
+
+# ---- python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+
+# ---- virtual environments ----
+.venv/
+venv/
+env/
+ENV/
+.python-version.local
+
+# ---- local data that must not be committed ----
+data/cache/
+data/uploads/
+data/local/
+*.db
+*.sqlite
+*.sqlite3
+*.tif
+*.tiff
+
+# ---- temporary / OS / IDE ----
+*.tmp
+*.log
+*.bak
+*~
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+.ipynb_checkpoints/

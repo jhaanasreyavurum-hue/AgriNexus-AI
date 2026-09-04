@@ -1,0 +1,127 @@
+# =============================================================================
+# AgriNexus AI — Crop growth-stage reference (days after sowing)
+# =============================================================================
+# SOURCE: general agronomic reference (FAO-56 crop-stage lengths and ICAR crop
+# calendars), approximate. Used for the Crop Timeline and for stage-aware
+# irrigation logic. NOT part of the client KB; labelled `source: reference`.
+# Values are cumulative day boundaries: stage i runs from end of stage i-1 to
+# `ends_day`.  Kc = FAO-56 indicative crop coefficient for the stage.
+# =============================================================================
+version: 1
+source: "FAO-56 (Allen et al. 1998) indicative stage lengths; ICAR calendars"
+
+default:
+  # generic annual field crop, ~120 days
+  stages:
+    - {name: Sowing,            ends_day: 7,   kc: 0.40, critical_water: false}
+    - {name: Emergence,         ends_day: 20,  kc: 0.50, critical_water: true}
+    - {name: Vegetative Growth, ends_day: 55,  kc: 0.85, critical_water: false}
+    - {name: Flowering,         ends_day: 80,  kc: 1.10, critical_water: true}
+    - {name: Grain Filling,     ends_day: 105, kc: 0.95, critical_water: true}
+    - {name: Maturity / Harvest,ends_day: 120, kc: 0.55, critical_water: false}
+
+crops:
+  "Cotton":
+    total_days: 170
+    stages:
+      - {name: Sowing,             ends_day: 10,  kc: 0.35, critical_water: false}
+      - {name: Emergence,          ends_day: 30,  kc: 0.45, critical_water: true}
+      - {name: Square Formation,   ends_day: 60,  kc: 0.75, critical_water: false}
+      - {name: Flowering,          ends_day: 100, kc: 1.15, critical_water: true}
+      - {name: Boll Development,   ends_day: 140, kc: 1.10, critical_water: true}
+      - {name: Boll Opening / Picking, ends_day: 170, kc: 0.60, critical_water: false}
+  "Paddy (Rice)":
+    total_days: 130
+    stages:
+      - {name: Nursery / Transplanting, ends_day: 25, kc: 1.05, critical_water: true}
+      - {name: Tillering,          ends_day: 55,  kc: 1.10, critical_water: true}
+      - {name: Panicle Initiation, ends_day: 75,  kc: 1.20, critical_water: true}
+      - {name: Flowering,          ends_day: 95,  kc: 1.20, critical_water: true}
+      - {name: Grain Filling,      ends_day: 115, kc: 1.00, critical_water: true}
+      - {name: Maturity / Harvest, ends_day: 130, kc: 0.70, critical_water: false}
+  "Maize":
+    total_days: 110
+    stages:
+      - {name: Sowing,             ends_day: 7,   kc: 0.35, critical_water: false}
+      - {name: Emergence,          ends_day: 20,  kc: 0.50, critical_water: true}
+      - {name: Vegetative Growth,  ends_day: 50,  kc: 0.90, critical_water: false}
+      - {name: Tasseling / Silking,ends_day: 70,  kc: 1.20, critical_water: true}
+      - {name: Grain Filling,      ends_day: 95,  kc: 1.05, critical_water: true}
+      - {name: Maturity / Harvest, ends_day: 110, kc: 0.60, critical_water: false}
+  "Wheat":
+    total_days: 130
+    stages:
+      - {name: Sowing,             ends_day: 7,   kc: 0.40, critical_water: false}
+      - {name: Crown Root Initiation, ends_day: 25, kc: 0.60, critical_water: true}
+      - {name: Tillering,          ends_day: 50,  kc: 0.90, critical_water: false}
+      - {name: Flowering / Heading,ends_day: 85,  kc: 1.15, critical_water: true}
+      - {name: Grain Filling,      ends_day: 115, kc: 1.00, critical_water: true}
+      - {name: Maturity / Harvest, ends_day: 130, kc: 0.40, critical_water: false}
+  "Soybean":
+    total_days: 105
+    stages:
+      - {name: Sowing,             ends_day: 7,   kc: 0.40, critical_water: false}
+      - {name: Emergence,          ends_day: 20,  kc: 0.50, critical_water: true}
+      - {name: Vegetative Growth,  ends_day: 45,  kc: 0.85, critical_water: false}
+      - {name: Flowering,          ends_day: 65,  kc: 1.15, critical_water: true}
+      - {name: Pod Filling,        ends_day: 90,  kc: 1.05, critical_water: true}
+      - {name: Maturity / Harvest, ends_day: 105, kc: 0.50, critical_water: false}
+  "Groundnut":
+    total_days: 120
+    stages:
+      - {name: Sowing,             ends_day: 7,   kc: 0.40, critical_water: false}
+      - {name: Emergence,          ends_day: 20,  kc: 0.50, critical_water: true}
+      - {name: Vegetative Growth,  ends_day: 45,  kc: 0.80, critical_water: false}
+      - {name: Flowering / Pegging,ends_day: 75,  kc: 1.15, critical_water: true}
+      - {name: Pod Development,    ends_day: 105, kc: 1.05, critical_water: true}
+      - {name: Maturity / Harvest, ends_day: 120, kc: 0.60, critical_water: false}
+  "Pigeon Pea (Tur/Arhar)":
+    total_days: 170
+    stages:
+      - {name: Sowing,             ends_day: 10,  kc: 0.40, critical_water: false}
+      - {name: Emergence,          ends_day: 30,  kc: 0.50, critical_water: true}
+      - {name: Vegetative Growth,  ends_day: 90,  kc: 0.85, critical_water: false}
+      - {name: Flowering,          ends_day: 125, kc: 1.10, critical_water: true}
+      - {name: Pod Filling,        ends_day: 155, kc: 1.00, critical_water: true}
+      - {name: Maturity / Harvest, ends_day: 170, kc: 0.50, critical_water: false}
+  "Chickpea (Gram)":
+    total_days: 110
+    stages:
+      - {name: Sowing,             ends_day: 7,   kc: 0.40, critical_water: false}
+      - {name: Emergence,          ends_day: 20,  kc: 0.50, critical_water: true}
+      - {name: Vegetative Growth,  ends_day: 50,  kc: 0.80, critical_water: false}
+      - {name: Flowering,          ends_day: 75,  kc: 1.00, critical_water: true}
+      - {name: Pod Filling,        ends_day: 100, kc: 0.90, critical_water: true}
+      - {name: Maturity / Harvest, ends_day: 110, kc: 0.35, critical_water: false}
+  "Red Chilli":
+    total_days: 180
+    stages:
+      - {name: Nursery / Transplanting, ends_day: 35, kc: 0.60, critical_water: true}
+      - {name: Vegetative Growth,  ends_day: 75,  kc: 0.85, critical_water: false}
+      - {name: Flowering,          ends_day: 110, kc: 1.05, critical_water: true}
+      - {name: Fruit Set,          ends_day: 145, kc: 1.05, critical_water: true}
+      - {name: Ripening / Picking, ends_day: 180, kc: 0.90, critical_water: false}
+  "Sugarcane":
+    total_days: 365
+    stages:
+      - {name: Planting,           ends_day: 35,  kc: 0.40, critical_water: true}
+      - {name: Germination / Tillering, ends_day: 120, kc: 0.80, critical_water: true}
+      - {name: Grand Growth,       ends_day: 270, kc: 1.25, critical_water: true}
+      - {name: Maturity / Ripening,ends_day: 335, kc: 0.95, critical_water: false}
+      - {name: Harvest,            ends_day: 365, kc: 0.75, critical_water: false}
+  "Turmeric":
+    total_days: 270
+    stages:
+      - {name: Planting,           ends_day: 30,  kc: 0.50, critical_water: true}
+      - {name: Sprouting,          ends_day: 60,  kc: 0.70, critical_water: true}
+      - {name: Vegetative Growth,  ends_day: 150, kc: 1.05, critical_water: false}
+      - {name: Rhizome Development,ends_day: 240, kc: 1.05, critical_water: true}
+      - {name: Maturity / Harvest, ends_day: 270, kc: 0.60, critical_water: false}
+  "Onion":
+    total_days: 130
+    stages:
+      - {name: Nursery / Transplanting, ends_day: 35, kc: 0.60, critical_water: true}
+      - {name: Vegetative Growth,  ends_day: 70,  kc: 0.90, critical_water: false}
+      - {name: Bulb Initiation,    ends_day: 100, kc: 1.05, critical_water: true}
+      - {name: Bulb Development,   ends_day: 120, kc: 1.00, critical_water: true}
+      - {name: Maturity / Harvest, ends_day: 130, kc: 0.75, critical_water: false}

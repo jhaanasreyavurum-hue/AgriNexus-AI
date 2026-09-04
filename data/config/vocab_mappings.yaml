@@ -1,0 +1,451 @@
+# =============================================================================
+# AgriNexus AI — Vocabulary canonicalisation
+# =============================================================================
+# The KB files use different vocabularies for the same concept. This file maps
+# every KB spelling to a canonical value used inside the engines. The original
+# strings are never rewritten in the CSVs; the loader adds *_canonical columns.
+# =============================================================================
+version: 1
+
+# -----------------------------------------------------------------------------
+# SOIL  — canonical: alluvial | black | red | laterite | sandy | clay | loam |
+#                    saline_alkaline
+# -----------------------------------------------------------------------------
+soil:
+  canonical:
+    alluvial:        {label: "Alluvial Soil",            texture: "loam",        drainage: "good",     fertility: "high"}
+    black:           {label: "Black Soil (Regur)",       texture: "clay",        drainage: "poor",     fertility: "high"}
+    red:             {label: "Red Soil",                 texture: "sandy_loam",  drainage: "good",     fertility: "low"}
+    laterite:        {label: "Laterite Soil",            texture: "clay_loam",   drainage: "good",     fertility: "low"}
+    sandy:           {label: "Sandy / Sandy Loam Soil",  texture: "sandy",       drainage: "excessive",fertility: "low"}
+    clay:            {label: "Clay / Clay Loam Soil",    texture: "clay",        drainage: "poor",     fertility: "medium"}
+    loam:            {label: "Loamy Soil",               texture: "loam",        drainage: "good",     fertility: "medium"}
+    saline_alkaline: {label: "Saline / Alkaline Soil",   texture: "variable",    drainage: "poor",     fertility: "low"}
+  aliases:
+    "Alluvial Soil": alluvial
+    "Black Soil (Regur)": black
+    "Black Soil": black
+    "Black Cotton Soil": black
+    "Regur": black
+    "Red Soil": red
+    "Red Sandy Soil": red
+    "Laterite Soil": laterite
+    "Sandy Loam Soil": sandy
+    "Sandy Soil": sandy
+    "Clay Loam Soil": clay
+    "Clay Soil": clay
+    "Well-Drained Loamy Soil": loam
+    "Loamy Soil": loam
+    "Loam": loam
+    "Saline / Alkaline Tolerant Soil": saline_alkaline
+    "Saline / Alkaline Soil": saline_alkaline
+    "Saline Soil": saline_alkaline
+    "Alkaline Soil": saline_alkaline
+  # Suitability of a crop's preferred soil (row) when the farm has soil (col).
+  # 1.0 = same canonical class. Used by the crop advisor as a soft score.
+  similarity:
+    alluvial:        {alluvial: 1.0, loam: 0.85, sandy: 0.6, clay: 0.6, black: 0.5, red: 0.5, laterite: 0.3, saline_alkaline: 0.2}
+    black:           {black: 1.0, clay: 0.8, alluvial: 0.5, loam: 0.5, red: 0.4, laterite: 0.3, sandy: 0.2, saline_alkaline: 0.3}
+    red:             {red: 1.0, laterite: 0.7, sandy: 0.7, loam: 0.6, alluvial: 0.5, black: 0.4, clay: 0.3, saline_alkaline: 0.2}
+    laterite:        {laterite: 1.0, red: 0.7, loam: 0.5, sandy: 0.5, clay: 0.4, alluvial: 0.3, black: 0.3, saline_alkaline: 0.2}
+    sandy:           {sandy: 1.0, red: 0.7, loam: 0.7, alluvial: 0.6, laterite: 0.5, black: 0.2, clay: 0.2, saline_alkaline: 0.3}
+    clay:            {clay: 1.0, black: 0.8, loam: 0.6, alluvial: 0.6, laterite: 0.4, red: 0.3, sandy: 0.2, saline_alkaline: 0.3}
+    loam:            {loam: 1.0, alluvial: 0.85, sandy: 0.7, clay: 0.6, red: 0.6, black: 0.5, laterite: 0.5, saline_alkaline: 0.2}
+    saline_alkaline: {saline_alkaline: 1.0, black: 0.3, clay: 0.3, sandy: 0.3, alluvial: 0.2, loam: 0.2, red: 0.2, laterite: 0.2}
+
+# -----------------------------------------------------------------------------
+# CROP GROUPS — map crop_master crop_name -> the group names used by the
+# scheme / eligibility / insurance / ai_rules tables. A crop may belong to
+# several groups (e.g. Mango -> Fruits, Horticulture Crops).
+# -----------------------------------------------------------------------------
+crop_groups:
+  # ---- KB scheme / rule vocabulary (keep spelling exactly as in KB) --------
+  group_labels:
+    - Paddy
+    - Rice
+    - Wheat
+    - Maize
+    - Cotton
+    - Sugarcane
+    - Soybean
+    - Groundnut
+    - Pulses
+    - Oilseeds
+    - Vegetables
+    - Fruits
+    - Horticulture Crops
+    - Millets (Jowar/Bajra)
+    - Red Gram (Tur Dal)
+    - Chilli
+    - Turmeric
+    - Chickpea (Gram)
+    - Mango
+    - Banana
+    - Grapes
+    - Bajra
+    - Tomato
+    - Papaya
+    - Pomegranate
+    - Citrus (Orange/Lemon)
+  # ---- crop_name -> groups -------------------------------------------------
+  map:
+    "Paddy (Rice)":              [Paddy, Rice]
+    "Wheat":                     [Wheat]
+    "Maize":                     [Maize]
+    "Barley":                    []
+    "Sorghum (Jowar)":           ["Millets (Jowar/Bajra)"]
+    "Pearl Millet (Bajra)":      ["Millets (Jowar/Bajra)", Bajra]
+    "Finger Millet (Ragi)":      ["Millets (Jowar/Bajra)"]
+    "Foxtail Millet":            ["Millets (Jowar/Bajra)"]
+    "Little Millet":             ["Millets (Jowar/Bajra)"]
+    "Kodo Millet":               ["Millets (Jowar/Bajra)"]
+    "Proso Millet":              ["Millets (Jowar/Bajra)"]
+    "Barnyard Millet":           ["Millets (Jowar/Bajra)"]
+    "Buckwheat":                 []
+    "Amaranth Grain":            []
+    "Chickpea (Gram)":           [Pulses, "Chickpea (Gram)"]
+    "Pigeon Pea (Tur/Arhar)":    [Pulses, "Red Gram (Tur Dal)"]
+    "Green Gram (Moong)":        [Pulses]
+    "Black Gram (Urad)":         [Pulses]
+    "Lentil (Masoor)":           [Pulses]
+    "Field Pea":                 [Pulses]
+    "Horse Gram":                [Pulses]
+    "Cowpea (Lobia)":            [Pulses]
+    "Rajma (Kidney Bean)":       [Pulses]
+    "Moth Bean":                 [Pulses]
+    "Rice Bean":                 [Pulses]
+    "Groundnut":                 [Groundnut, Oilseeds]
+    "Soybean":                   [Soybean, Oilseeds]
+    "Mustard":                   [Oilseeds]
+    "Sunflower":                 [Oilseeds]
+    "Sesame (Til)":              [Oilseeds]
+    "Castor":                    [Oilseeds]
+    "Linseed":                   [Oilseeds]
+    "Safflower":                 [Oilseeds]
+    "Niger Seed":                [Oilseeds]
+    "Rapeseed":                  [Oilseeds]
+    "Cotton":                    [Cotton]
+    "Sugarcane":                 [Sugarcane]
+    "Jute":                      []
+    "Tobacco":                   []
+    "Mesta":                     []
+    "Sunhemp":                   []
+    "Guar (Cluster Bean Seed)":  []
+    "Tomato":                    [Vegetables, "Horticulture Crops", Tomato]
+    "Onion":                     [Vegetables, "Horticulture Crops"]
+    "Potato":                    [Vegetables, "Horticulture Crops"]
+    "Brinjal":                   [Vegetables, "Horticulture Crops"]
+    "Okra (Lady Finger)":        [Vegetables, "Horticulture Crops"]
+    "Cauliflower":               [Vegetables, "Horticulture Crops"]
+    "Cabbage":                   [Vegetables, "Horticulture Crops"]
+    "Carrot":                    [Vegetables, "Horticulture Crops"]
+    "Radish":                    [Vegetables, "Horticulture Crops"]
+    "Cluster Bean":              [Vegetables, "Horticulture Crops"]
+    "Bottle Gourd":              [Vegetables, "Horticulture Crops"]
+    "Bitter Gourd":              [Vegetables, "Horticulture Crops"]
+    "Ridge Gourd":               [Vegetables, "Horticulture Crops"]
+    "Pumpkin":                   [Vegetables, "Horticulture Crops"]
+    "Cucumber":                  [Vegetables, "Horticulture Crops"]
+    "Spinach":                   [Vegetables, "Horticulture Crops"]
+    "Green Chilli":              [Vegetables, "Horticulture Crops", Chilli]
+    "Capsicum":                  [Vegetables, "Horticulture Crops"]
+    "Green Peas":                [Vegetables, "Horticulture Crops"]
+    "Sweet Potato":              [Vegetables, "Horticulture Crops"]
+    "French Beans":              [Vegetables, "Horticulture Crops"]
+    "Drumstick (Moringa)":       [Vegetables, "Horticulture Crops"]
+    "Ash Gourd":                 [Vegetables, "Horticulture Crops"]
+    "Beetroot":                  [Vegetables, "Horticulture Crops"]
+    "Mango":                     [Fruits, "Horticulture Crops", Mango]
+    "Banana":                    [Fruits, "Horticulture Crops", Banana]
+    "Grapes":                    [Fruits, "Horticulture Crops", Grapes]
+    "Papaya":                    [Fruits, "Horticulture Crops", Papaya]
+    "Guava":                     [Fruits, "Horticulture Crops"]
+    "Pomegranate":               [Fruits, "Horticulture Crops", Pomegranate]
+    "Orange (Citrus)":           [Fruits, "Horticulture Crops", "Citrus (Orange/Lemon)"]
+    "Lemon":                     [Fruits, "Horticulture Crops", "Citrus (Orange/Lemon)"]
+    "Sapota (Chikoo)":           [Fruits, "Horticulture Crops"]
+    "Watermelon":                [Fruits, "Horticulture Crops"]
+    "Muskmelon":                 [Fruits, "Horticulture Crops"]
+    "Apple":                     [Fruits, "Horticulture Crops"]
+    "Pineapple":                 [Fruits, "Horticulture Crops"]
+    "Litchi":                    [Fruits, "Horticulture Crops"]
+    "Custard Apple":             [Fruits, "Horticulture Crops"]
+    "Jackfruit":                 [Fruits, "Horticulture Crops"]
+    "Fig":                       [Fruits, "Horticulture Crops"]
+    "Ber (Indian Jujube)":       [Fruits, "Horticulture Crops"]
+    "Sweet Lime (Mosambi)":      [Fruits, "Horticulture Crops", "Citrus (Orange/Lemon)"]
+    "Strawberry":                [Fruits, "Horticulture Crops"]
+    "Turmeric":                  [Turmeric, "Horticulture Crops"]
+    "Red Chilli":                [Chilli, "Horticulture Crops"]
+    "Coriander":                 ["Horticulture Crops"]
+    "Cumin":                     ["Horticulture Crops"]
+    "Fenugreek":                 ["Horticulture Crops"]
+    "Black Pepper":              ["Horticulture Crops"]
+    "Cardamom":                  ["Horticulture Crops"]
+    "Ginger":                    ["Horticulture Crops"]
+    "Garlic":                    ["Horticulture Crops"]
+    "Fennel":                    ["Horticulture Crops"]
+    "Tamarind":                  ["Horticulture Crops"]
+    "Curry Leaf":                ["Horticulture Crops"]
+    "Coconut":                   ["Horticulture Crops"]
+    "Arecanut":                  ["Horticulture Crops"]
+    "Cashew":                    ["Horticulture Crops"]
+    "Tea":                       ["Horticulture Crops"]
+    "Coffee":                    ["Horticulture Crops"]
+    "Rubber":                    ["Horticulture Crops"]
+    "Oil Palm":                  [Oilseeds, "Horticulture Crops"]
+    "Lucerne (Alfalfa)":         []
+    "Berseem":                   []
+    "Maize Fodder":              []
+    "Sorghum Fodder":            []
+    "Napier Grass (Hybrid Fodder)": []
+    "Isabgol (Psyllium)":        []
+    "Sugar Beet":                []
+    "Quinoa":                    []
+    "Chia Seed":                 []
+    "Stevia":                    ["Horticulture Crops"]
+    "Aloe Vera":                 ["Horticulture Crops"]
+    "Lemongrass":                ["Horticulture Crops"]
+    "Mushroom (Button)":         ["Horticulture Crops"]
+    "Vanilla":                   ["Horticulture Crops"]
+    "Betel Leaf (Paan)":         ["Horticulture Crops"]
+  # Free-text user input -> crop_master crop_name
+  aliases:
+    "Paddy": "Paddy (Rice)"
+    "Rice": "Paddy (Rice)"
+    "Jowar": "Sorghum (Jowar)"
+    "Bajra": "Pearl Millet (Bajra)"
+    "Ragi": "Finger Millet (Ragi)"
+    "Gram": "Chickpea (Gram)"
+    "Chana": "Chickpea (Gram)"
+    "Tur": "Pigeon Pea (Tur/Arhar)"
+    "Arhar": "Pigeon Pea (Tur/Arhar)"
+    "Red Gram": "Pigeon Pea (Tur/Arhar)"
+    "Red Gram (Tur Dal)": "Pigeon Pea (Tur/Arhar)"
+    "Moong": "Green Gram (Moong)"
+    "Urad": "Black Gram (Urad)"
+    "Masoor": "Lentil (Masoor)"
+    "Chilli": "Red Chilli"
+    "Chili": "Red Chilli"
+    "Mirchi": "Red Chilli"
+    "Okra": "Okra (Lady Finger)"
+    "Bhindi": "Okra (Lady Finger)"
+    "Orange": "Orange (Citrus)"
+    "Citrus": "Orange (Citrus)"
+    "Til": "Sesame (Til)"
+    "Sesame": "Sesame (Til)"
+    "Mosambi": "Sweet Lime (Mosambi)"
+    "Haldi": "Turmeric"
+
+# -----------------------------------------------------------------------------
+# LAND BANDS — as used in ai_recommendation_rules.condition_json (acres)
+# -----------------------------------------------------------------------------
+land_bands:
+  - {label: "<2 Acres",   min: 0,  max: 2}
+  - {label: "2-5 Acres",  min: 2,  max: 5}
+  - {label: "5-10 Acres", min: 5,  max: 10}
+  - {label: ">10 Acres",  min: 10, max: null}
+  # coarse band used by some rules; a farm matches it if land < 5
+  - {label: "<5 Acres",   min: 0,  max: 5}
+
+# -----------------------------------------------------------------------------
+# INCOME BANDS — annual household income, INR
+# -----------------------------------------------------------------------------
+income_bands:
+  - {label: "<200000",        min: 0,      max: 200000}
+  - {label: "200000-300000",  min: 200000, max: 300000}
+  - {label: "300000-500000",  min: 300000, max: 500000}
+  - {label: ">500000",        min: 500000, max: null}
+  - {label: "<300000",        min: 0,      max: 300000}
+
+# -----------------------------------------------------------------------------
+# FARMER CATEGORY — derived from land holding (hectares, GoI Agricultural
+# Census definition) plus profile flags. Mapped to KB spellings.
+# -----------------------------------------------------------------------------
+farmer_category:
+  by_land_hectares:
+    - {label: Marginal Farmer, max_ha: 1.0}
+    - {label: Small Farmer,    max_ha: 2.0}
+    - {label: Medium Farmer,   max_ha: 10.0}     # KB uses "Medium" for semi-medium+medium
+    - {label: Large Farmer,    max_ha: null}
+  # KB `eligible_farmer` / `beneficiary_type` / `farmer_category` spellings
+  # that a farm profile satisfies. Key = canonical profile attribute.
+  kb_terms:
+    any:
+      - All Categories of Farmers
+      - Any Registered Farmer
+      - All Farmers (Loanee and Non-Loanee)
+      - Non-Loanee Farmers (Voluntary Enrolment)
+    landowner:
+      - Farmers with Valid Land Records
+      - Landowning Farmers
+      - Landholding Farmer
+      - Landholding Farmer Families
+      - Landowning Farmers with Revenue Records
+      - Tenant & Landowning Farmers
+    tenant:
+      - Tenant Farmer
+      - Tenant & Landowning Farmers
+      - Sharecroppers and Tenant Farmers with Valid Certificate
+    sharecropper:
+      - Sharecropper
+      - Sharecroppers with Certificate
+      - Sharecroppers and Tenant Farmers with Valid Certificate
+    small_marginal:
+      - Small & Marginal Farmer
+      - Small & Marginal Farmers
+      - Small Farmer
+      - Marginal Farmer
+    medium:
+      - Medium Farmer
+    large:
+      - Large Farmer
+    women:
+      - Women Farmer
+      - Women-headed Farm Households
+    fpo_member:
+      - Farmer Producer Organisation (FPO)
+      - FPO Member Farmer
+      - FPO Member Farmers
+    horticulture:
+      - Horticulture Grower
+      - Horticulture Growers with Plantation Records
+    loanee:
+      - Loanee Farmers (Compulsory Coverage via KCC/Crop Loan)
+    livestock:
+      - Dairy Farmer
+      - Farmers with Registered Livestock and Health Certificate
+    fisher:
+      - Fisherfolk
+    labourer:
+      - Agricultural Labourer
+
+# -----------------------------------------------------------------------------
+# SEASONS — canonical + month windows (India, approximate)
+# -----------------------------------------------------------------------------
+seasons:
+  Kharif:                 {sowing_months: [6, 7, 8],   label: "Kharif (monsoon)"}
+  Rabi:                   {sowing_months: [10, 11, 12], label: "Rabi (winter)"}
+  "Zaid (Summer)":        {sowing_months: [2, 3, 4],   label: "Zaid (summer)"}
+  "Year-round (Perennial)": {sowing_months: [],          label: "Perennial"}
+
+# -----------------------------------------------------------------------------
+# RISK -> insurance covered_risk keywords (used by insurance matcher to link
+# detected farm risks to relevant covers)
+# -----------------------------------------------------------------------------
+risk_to_cover_keywords:
+  drought:          [Drought, "Deficit / Excess Rainfall", Water Stress, Dry Spell]
+  water_stress:     [Drought, Water Stress, "Deficit / Excess Rainfall"]
+  excess_rainfall:  [Excess Rainfall, Flood, Inundation, "Deficit / Excess Rainfall"]
+  heat_stress:      [Heat, Temperature, Humidity]
+  crop_stress:      [Pest, Disease, Yield]
+  hail_storm:       [Hailstorm, Cyclone]
+  fire:             [Fire, Lightning]
+
+# -----------------------------------------------------------------------------
+# DOCUMENTS — the KB spells the same document several ways across tables.
+# Canonical name -> list of KB spellings. Farmer `documents_held` may use any.
+# -----------------------------------------------------------------------------
+documents:
+  canonical:
+    "Aadhaar Card": ["Aadhaar Card"]
+    "Mobile Number Linked to Aadhaar": ["Mobile Number Linked to Aadhaar", "Mobile Number linked to Aadhaar"]
+    "Bank Passbook / Cancelled Cheque": ["Bank Passbook / Cancelled Cheque", "Bank Passbook"]
+    "Bank Statement (6 months)": ["Bank Statement (6 months)"]
+    "Land Ownership / Pattadar Passbook": ["Land Ownership / Pattadar Passbook", "Land Passbook / Pattadar Passbook"]
+    "Tenant Farmer / Sharecropper Certificate": ["Tenant Farmer / Sharecropper Certificate", "Tenant Farmer Certificate"]
+    "Voter ID / Address Proof": ["Voter ID / Address Proof", "Voter ID", "Voter ID Card", "Address Proof (Utility Bill)"]
+    "Passport Size Photograph": ["Passport Size Photograph", "Passport Size Photographs"]
+    "Income Certificate": ["Income Certificate", "Income Proof"]
+    "Caste Certificate": ["Caste Certificate"]
+    "Ration Card": ["Ration Card"]
+    "PAN Card": ["PAN Card"]
+    "Soil Health Card": ["Soil Health Card"]
+    "Crop Sowing Certificate": ["Crop Sowing Certificate"]
+    "FPO / SHG Registration Certificate": ["FPO / SHG Registration Certificate", "FPO Registration Certificate"]
+    "Quotation from Authorized Dealer": ["Quotation from Authorized Dealer", "Quotation of Equipment / Machinery"]
+    "No Dues Certificate from Other Banks": ["No Dues Certificate from Other Banks", "No Dues Certificate from other Banks"]
+    "Existing Loan Statement (if any)": ["Existing Loan Statement (if any)"]
+    "Collateral / Security Documents": ["Collateral / Security Documents"]
+    "Encumbrance Certificate": ["Encumbrance Certificate"]
+    "Bank Guarantee / Surety Bond": ["Bank Guarantee / Surety Bond"]
+    "KCC Application Form": ["KCC Application Form"]
+    "Insurance Proposal Form": ["Insurance Proposal Form"]
+    "Premium Payment Receipt": ["Premium Payment Receipt"]
+    "Previous Subsidy Non-Availment Declaration": ["Previous Subsidy Non-Availment Declaration"]
+    "Project Report / Detailed Project Report (DPR)": ["Project Report / Detailed Project Report (DPR)"]
+    "Village / Revenue Officer Certificate": ["Village / Revenue Officer Certificate"]
+    "Water Source Certificate (Borewell/Canal)": ["Water Source Certificate (Borewell/Canal)"]
+    "Ear-Tag / Animal Identification Certificate": ["Ear-Tag / Animal Identification Certificate"]
+    "Livestock Health & Vaccination Certificate": ["Livestock Health & Vaccination Certificate"]
+    "Post-Mortem Report (for Livestock Claims)": ["Post-Mortem Report (for Livestock Claims)"]
+  # documents that are implied by profile flags (no need to list in documents_held)
+  implied_by_profile:
+    has_aadhaar: ["Aadhaar Card", "Mobile Number Linked to Aadhaar"]
+    has_bank_account: ["Bank Passbook / Cancelled Cheque"]
+    has_soil_health_card: ["Soil Health Card"]
+    has_land_records_owner: ["Land Ownership / Pattadar Passbook"]
+    is_fpo_member: ["FPO / SHG Registration Certificate"]
+  # documents that are forms filled at application time (never "missing" in a blocking sense)
+  obtainable_at_application:
+    - "KCC Application Form"
+    - "Insurance Proposal Form"
+    - "Premium Payment Receipt"
+    - "Previous Subsidy Non-Availment Declaration"
+    - "Passport Size Photograph"
+    - "Quotation from Authorized Dealer"
+    - "Crop Sowing Certificate"
+    - "Bank Statement (6 months)"                 # issued by the farmer's own bank on request
+    - "Existing Loan Statement (if any)"
+    - "No Dues Certificate from Other Banks"
+
+  # documents that only apply in a specific context; elsewhere they are reported
+  # as "not applicable" and excluded from readiness (KB lists them generically).
+  conditional:
+    livestock:            ["Ear-Tag / Animal Identification Certificate", "Livestock Health & Vaccination Certificate", "Post-Mortem Report (for Livestock Claims)"]
+    fpo_member:           ["FPO / SHG Registration Certificate"]
+    tenant_or_sharecropper: ["Tenant Farmer / Sharecropper Certificate"]
+    collateral_loan:      ["Collateral / Security Documents", "Bank Guarantee / Surety Bond", "Encumbrance Certificate"]
+    project_loan:         ["Project Report / Detailed Project Report (DPR)"]
+
+# -----------------------------------------------------------------------------
+# LOAN PURPOSE -> KB loan_type (FarmContext.finance.loan_purpose)
+# -----------------------------------------------------------------------------
+loan_purpose_to_types:
+  crop_loan:    ["Kisan Credit Card (KCC)", "Crop Loan (Seasonal Agricultural Operations)", "Gold Loan for Agricultural Purposes"]
+  equipment:    ["Farm Mechanization / Tractor Loan", "Kisan Credit Card (KCC)"]
+  irrigation:   ["Micro Irrigation / Drip & Sprinkler Loan", "Solar Pump / Renewable Energy Agri Loan"]
+  storage:      ["Warehouse Receipt / Post-Harvest Loan", "Agri Infrastructure & Cold Storage Loan"]
+  livestock:    ["Dairy & Livestock Development Loan"]
+  horticulture: ["Horticulture & Plantation Loan"]
+  fpo:          ["Farmer Producer Organisation (FPO) Term Loan"]
+  fisheries:    ["Fisheries & Aquaculture Loan"]
+
+# -----------------------------------------------------------------------------
+# SUBSIDY subcategory -> which farm situation makes it relevant
+# -----------------------------------------------------------------------------
+subsidy_relevance:
+  "Micro Irrigation & Drip/Sprinkler": {needs: [water_stress, drought, flood_irrigation, low_water_soil]}
+  "Farm Pond & Water Conservation":     {needs: [water_stress, drought, rainfed]}
+  "Solar & Renewable Energy":           {needs: [borewell, irrigation_available]}
+  "Fertilizer & Soil Health":           {needs: [soil_limitation, low_oc, no_soil_card]}
+  "Organic & Natural Farming":          {needs: [low_oc, sustainability]}
+  "Seed & Planting Material":           {needs: [always]}
+  "Farm Mechanization & Equipment":     {needs: [medium_large]}
+  "Custom Hiring Centre":               {needs: [small_marginal, fpo_member]}
+  "Horticulture & Plantation":          {needs: [horticulture_crop]}
+  "Post-Harvest & Storage Infrastructure": {needs: [harvest_near, fpo_member]}
+  "Cold Storage & Warehousing":         {needs: [horticulture_crop, fpo_member]}
+  "FPO & Cooperative Development":      {needs: [fpo_member]}
+  "Livestock & Dairy Development":      {needs: [livestock]}
+  "Beekeeping & Apiculture":            {needs: [horticulture_crop, diversification]}
+  "Fisheries & Aquaculture":            {needs: [fisheries]}
+
+# -----------------------------------------------------------------------------
+# FARM OBJECTIVE -> crop market category weights (crop advisor)
+# -----------------------------------------------------------------------------
+objective_category_bonus:
+  profit:         {"Cash Crop / Fibre": 6, "Spice": 5, "Vegetable": 4, "Fruit": 4, "Oilseed": 2, "Plantation": 2}
+  food_security:  {"Cereal": 6, "Pulse": 5, "Vegetable": 3}
+  low_risk:       {"Pulse": 5, "Cereal": 4, "Oilseed": 3, "Fodder": 2}
+  sustainability: {"Pulse": 6, "Fodder": 3, "Cereal": 2, "Oilseed": 2}

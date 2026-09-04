@@ -1,0 +1,114 @@
+# =============================================================================
+# DEMO FARM — Telangana · Warangal Rural · Cotton (Kharif)
+# =============================================================================
+# THIS IS SAMPLE DATA. Every value below is illustrative and is labelled
+# `source: demo` so the application shows a DEMO badge next to it. No value
+# here is a real measurement of a real farm. Replace with real data through
+# the farm profile form / uploads.
+# Location coordinates come from the client KB state_district_master
+# (Warangal Rural: 17.9689, 79.5941) and are the only non-demo values.
+# =============================================================================
+farm_id: TS_WARANGAL_COTTON_DEMO
+farm_name: "Demo Farm 1 — Ramulu's Cotton Field (Warangal Rural, Telangana)"
+is_demo: true
+as_of: "2026-09-04"
+notes: >
+  Primary demo. Telangana chosen because the knowledge base has the deepest
+  coverage there (33 districts, 37 state schemes, 200 bank branches).
+
+farmer:
+  farmer_id: DEMO-F001
+  name: "Ramulu (demo)"
+  age: 42
+  gender: male
+  land_ownership: owner
+  has_land_records: true
+  is_fpo_member: false
+  has_aadhaar: true
+  has_bank_account: true
+  has_soil_health_card: true
+  has_kcc: false
+  has_crop_insurance: false
+  annual_income_inr: 180000
+  existing_loans_inr: 0
+  credit_score: null
+  documents_held:
+    - Aadhaar Card
+    - Land Ownership / Pattadar Passbook
+    - Bank Passbook
+    - Soil Health Card
+    - Passport Size Photograph
+  livestock: false
+  primary_objective: profit
+
+location:
+  state: Telangana
+  district: Warangal Rural
+  village: "Demo village"
+  latitude: 17.9689
+  longitude: 79.5941
+  agro_climatic_zone: "Southern Plateau and Hills"
+  provenance: {source: knowledge_base, detail: "state_district_master (district centroid)"}
+
+geometry:
+  area_value: 3.5
+  area_unit: acres
+  # ~1.4 ha rectangle around the district centroid — DEMO boundary
+  polygon:
+    - [[79.5930, 17.9682], [79.5952, 17.9682], [79.5952, 17.9696], [79.5930, 17.9696], [79.5930, 17.9682]]
+  provenance: {source: demo, detail: "illustrative boundary"}
+
+crop:
+  current_crop: Cotton
+  season: Kharif
+  sowing_date: "2026-06-20"
+  previous_crop: "Pigeon Pea (Tur/Arhar)"
+  variety: "Bt hybrid (demo)"
+  provenance: {source: demo}
+
+soil:
+  soil_type: "Black Soil (Regur)"
+  ph: 7.9
+  organic_carbon_pct: 0.42
+  nitrogen_kg_ha: 210
+  phosphorus_kg_ha: 18
+  potassium_kg_ha: 310
+  ec_ds_m: 0.35
+  texture: clay
+  depth_cm: 90
+  moisture_pct: null
+  provenance: {source: demo, detail: "illustrative Soil Health Card values"}
+
+irrigation:
+  source: borewell
+  method: flood
+  available: true
+  reliability: partial
+  last_irrigation_date: "2026-08-29"
+  provenance: {source: demo}
+
+# Weather block left empty on purpose: it is filled live from Open-Meteo at
+# runtime (no key needed). If offline, the UI states weather is unavailable.
+weather:
+  annual_rainfall_normal_mm: 950
+  provenance: {source: demo, detail: "annual normal is illustrative; live forecast from Open-Meteo"}
+
+remote_sensing:
+  sensor: "DEMO synthetic series (not satellite-derived)"
+  provenance: {source: demo, detail: "synthetic NDVI series for demonstration only"}
+  ndvi_series:
+    - {date: "2026-06-25", ndvi: 0.18, ndwi: -0.05}
+    - {date: "2026-07-05", ndvi: 0.24, ndwi: 0.02}
+    - {date: "2026-07-15", ndvi: 0.33, ndwi: 0.08}
+    - {date: "2026-07-25", ndvi: 0.45, ndwi: 0.14}
+    - {date: "2026-08-04", ndvi: 0.56, ndwi: 0.19}
+    - {date: "2026-08-14", ndvi: 0.64, ndwi: 0.22}
+    - {date: "2026-08-24", ndvi: 0.68, ndwi: 0.20}
+    - {date: "2026-09-03", ndvi: 0.63, ndwi: 0.13}
+
+finance:
+  input_cost_estimate_inr: 95000
+  expected_revenue_inr: 210000
+  loan_purpose: crop_loan
+  collateral_available: true
+  provenance: {source: demo}

@@ -1,0 +1,104 @@
+# =============================================================================
+# DEMO FARM — Maharashtra · Nashik · Soybean (Kharif), rainfed, tenant farmer
+# =============================================================================
+# THIS IS SAMPLE DATA, labelled `source: demo` throughout. Chosen to exercise
+# a different profile: tenant, woman farmer, rainfed, low income, no soil
+# card — so scheme/loan/insurance matching produces visibly different output.
+# Coordinates are the KB district centroid for Nashik (19.9975, 73.7898).
+# =============================================================================
+farm_id: MH_NASHIK_SOYBEAN_DEMO
+farm_name: "Demo Farm 2 — Sunita's Soybean Plot (Nashik, Maharashtra)"
+is_demo: true
+as_of: "2026-09-04"
+notes: >
+  Secondary demo. The KB has moderate coverage for Maharashtra (eligibility
+  rules present; no state-specific schemes or bank branches), so the
+  application must show its coverage notice here.
+
+farmer:
+  farmer_id: DEMO-F002
+  name: "Sunita (demo)"
+  age: 36
+  gender: female
+  land_ownership: tenant
+  has_land_records: false
+  is_fpo_member: true
+  has_aadhaar: true
+  has_bank_account: true
+  has_soil_health_card: false
+  has_kcc: false
+  has_crop_insurance: false
+  annual_income_inr: 120000
+  existing_loans_inr: 40000
+  credit_score: null
+  documents_held:
+    - Aadhaar Card
+    - Bank Passbook
+    - Tenant Farmer / Sharecropper Certificate
+    - FPO Registration Certificate
+  livestock: true
+  primary_objective: low_risk
+
+location:
+  state: Maharashtra
+  district: Nashik
+  latitude: 19.9975
+  longitude: 73.7898
+  agro_climatic_zone: "Western Plateau and Hills"
+  provenance: {source: knowledge_base, detail: "state_district_master (district centroid)"}
+
+geometry:
+  area_value: 1.6
+  area_unit: acres
+  polygon:
+    - [[73.7890, 19.9970], [73.7906, 19.9970], [73.7906, 19.9980], [73.7890, 19.9980], [73.7890, 19.9970]]
+  provenance: {source: demo, detail: "illustrative boundary"}
+
+crop:
+  current_crop: Soybean
+  season: Kharif
+  sowing_date: "2026-06-28"
+  previous_crop: "Chickpea (Gram)"
+  provenance: {source: demo}
+
+soil:
+  soil_type: "Red Soil"
+  ph: 6.4
+  organic_carbon_pct: 0.31
+  nitrogen_kg_ha: 160
+  phosphorus_kg_ha: 12
+  potassium_kg_ha: 180
+  ec_ds_m: 0.20
+  texture: sandy_loam
+  depth_cm: 45
+  provenance: {source: demo, detail: "illustrative values; farmer has no Soil Health Card"}
+
+irrigation:
+  source: rainfed
+  method: null
+  available: false
+  reliability: unreliable
+  provenance: {source: demo}
+
+weather:
+  annual_rainfall_normal_mm: 700
+  provenance: {source: demo, detail: "annual normal is illustrative; live forecast from Open-Meteo"}
+
+remote_sensing:
+  sensor: "DEMO synthetic series (not satellite-derived)"
+  provenance: {source: demo, detail: "synthetic NDVI series for demonstration only"}
+  ndvi_series:
+    - {date: "2026-07-03", ndvi: 0.16, ndwi: -0.08}
+    - {date: "2026-07-13", ndvi: 0.22, ndwi: -0.02}
+    - {date: "2026-07-23", ndvi: 0.31, ndwi: 0.05}
+    - {date: "2026-08-02", ndvi: 0.42, ndwi: 0.10}
+    - {date: "2026-08-12", ndvi: 0.51, ndwi: 0.12}
+    - {date: "2026-08-22", ndvi: 0.49, ndwi: 0.06}
+    - {date: "2026-09-01", ndvi: 0.43, ndwi: -0.01}
+
+finance:
+  input_cost_estimate_inr: 28000
+  expected_revenue_inr: 62000
+  loan_purpose: crop_loan
+  collateral_available: false
+  provenance: {source: demo}
